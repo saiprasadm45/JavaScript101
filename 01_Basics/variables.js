@@ -2,7 +2,7 @@
 
 /*  
     var ->  var is function scoped, can be redeclare and update. 
-            can be used before declaretion; 
+            can be used before declaretion, called Hosting; 
             can be initialize empty; gives undefined.
 
     let -> 
@@ -31,12 +31,6 @@
 // // var age;
 // // age = 25;  
 // 
-// Const can't be update & can't be re-declare.
-
-// let is block-scoped, can't be re-declare but can be update;
-
-// var is function scoped, can be redeclare and update.
-        // can be used before declaretion;
 
 // a = 5; 
 // console.log(a+b)
