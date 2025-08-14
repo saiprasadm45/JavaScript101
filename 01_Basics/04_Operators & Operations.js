@@ -109,3 +109,32 @@ console.log(p <= 50 && q == 31)
 console.log(p >= 50 || q == 14 || q >= 30)
 
 console.log(!false)
+
+                            //working with non-booleans
+
+                            // OR-> Returns the first truthy value, or the last falsy one if all are falsy.
+console.log(false || "hello")
+false || "hello"   // → "hello"
+0 || 42            // → 42
+"" || "world"      // → "world"
+null || undefined  // → undefined
+false || 0 || NaN  // → NaN
+"hi" || "bye"      // → "hi"
+
+                            // AND-> Returns the first falsy value, or the last truthy if all are truthy.
+
+
+true && "hello"     // → "hello"
+1 && 42             // → 42
+0 && "world"        // → 0
+"" && "hi"          // → ""
+null && 5           // → null
+"hi" && "bye"       // → "bye"
+
+
+// BITWISEE opearator->
+console.log(2 & 7) //0
+console.log(2 | 5) //7
+console.log(~(7)) //-8
+
+console.log( 2 ^ 2 )
