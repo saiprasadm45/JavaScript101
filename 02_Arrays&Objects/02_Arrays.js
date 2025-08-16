@@ -25,5 +25,50 @@ const score3 = 310
 
 console.log(Array.of(score1,score2,score3)) //Array.of convert other variabes to  array.
 
+//sorting in arrays=>
 
-  
+let sorting= [35,26,25,633,2,6,73,72,8,3,2]
+sorting.sort()
+console.log(sorting) //   2, 2,  25, 26,  3, 35, 6, 633, 72, 73, 8 //cause sort by default convert all element into string, then its sort them alphabetically(lexicographic) order.
+// Lexicographically, it compares the first character of each string:
+
+// "2" comes before "25" and "26"
+
+// "3" comes before "35"
+
+// "6" comes before "633"
+
+// and so on...
+
+sorting.sort((a,b) => a - b) // a goes through 0 index, b thourhg 1, goes one step ahead everytime, if a-b gaves less than = 0 means a comes before b; if a-b gaves equal = 0 means both are equal; if a-b gaves greater than = 0 means b comes before a.
+console.log(sorting)
+
+let sorting2 = ['suresh',true, null, 4, undefined, 'nayan','nitin','navin','ayan','ahan'] // converts all them in string so 4 will first and rest. at last "undefined".
+sorting2.sort()
+console.log(sorting2)
+
+console.log(sorting.reverse())
+
+let mixedArray = [15454,4848,278,25,[484,39,[89,67,3],554,358,7],7893,1]
+console.log(mixedArray.flat(Infinity)) // flat gives a new array, if there is array within array.
+
+console.log(mixedArray.find(num => num < 100)) //Returns the first element in the array that satisfies the given condition. If none match, returns undefined.
+
+let everyeven = [16,8,6,20,19,18]
+console.log(everyeven.every(numbers => numbers % 2 ==0)) //takes function, return true if condition is true for all elemtns in array.
+
+const someeven = [21,7,9,3,17,41]
+console.log(someeven.some(num => num % 2 == 0)) ////takes function, return true if condition is true for any one of moment in array, stops chasing next one
+
+const arr01 = [45,79,1,36,7,69,17,5]
+console.log(arr01)
+const arr02 = arr01.copyWithin(4,4,-7)  // index, start, end exclusive. // copies from the start index to last index-1, at given index. //Copies part of the array to another location in the same array, without changing its size
+console.log(arr02)
+console.log(arr01)
+
+const arrfill = [1,2,3,4,5,6,7]
+console.log(arrfill)
+const arrfill2 = arrfill.fill(0,2,4) // value, start, end exlusie // insert the value at start and last index-1, replacing orginal values
+console.log(arrfill2)
+
+// copywithin and fill done with orignal data.
