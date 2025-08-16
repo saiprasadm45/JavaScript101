@@ -91,7 +91,7 @@ console.log(myArray, reversingarra) //this will rsult-> [ 'added', 'node', 17, 3
 
 //splice works on original data.
 
-let spliceeg1 = myArray//.splice(0,3) // splice(start, deletecount) exlusive
+let spliceeg1 = myArray//.splice(0,3) // splice(start, deletecount) inclusive
 // console.log(myArray, spliceeg1) 
 
 let spliceeg2 = myArray.splice(1,0, "node", 'js', "successfuly")
