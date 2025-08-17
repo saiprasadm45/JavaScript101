@@ -1,7 +1,6 @@
 // object.freeze freezes the whole object thats mean we can't add new data, update it, delete it etc.
 // object.seal() = we can't add or delete data, but can update it.
-
-
+// object.assign() = used to combine multiple objects. (target, source) if everyone has same keys then last one print by overriding all., the returnedTarget is the same object as target. It does not create a new object. So returnedTarget === target is true ✅
 
 //using constructor, called singleton -> Object.user
 
@@ -58,12 +57,12 @@ delete user["paisa"] // delete used to delete the key value pair of object
 console.log(user)
 
 let keys = Object.keys(user) // gives all keys of object
-let values = Object.values(user) // gives all values of object, for function act as obj.fun not obj.fun()
-let entries = Object.entries(user) // gives object with key value pair, for function act as obj.fun not obj.fun()
+let values = Object.values(user) // gives all values of object, for function act as obj.fun not obj.fun() means {function: anonymous}
+let entries = Object.entries(user) // gives object with key value pair, for function act as obj.fun not obj.fun() means {function: anonymous}
 
-console.log(keys)
-console.log(values)
-console.log(entries)
+console.log(keys)//returned dataypes is array.
+console.log(values)//returned dataypes is array.
+console.log(entries)//returned dataypes is array.
 
 console.log(user)
 Object.seal(user)
