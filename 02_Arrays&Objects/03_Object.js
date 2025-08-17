@@ -112,8 +112,8 @@ console.log(address)
 
 let key = "score";
 let obj = {
-  [key]: 42
-};
+  [key]: 42 //here whenver we pass a variable inside [], and the variable value consider as a key of that obj
+}; 
 console.log(obj.score) //42
 console.log(obj.key) //undefined
 console.log(obj[key]) //42
