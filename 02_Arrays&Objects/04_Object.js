@@ -78,6 +78,7 @@ const players = {
 
 const{name, jearsy_no} = players //destructuring.
 console.log(name, typeof name)//m s dhoni, object
+
 console.log(players.name, typeof players.name, typeof players) //m s dhoni , string, object
 
 const person = {
