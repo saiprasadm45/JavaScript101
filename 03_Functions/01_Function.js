@@ -70,7 +70,84 @@ const substract = function (num1, num2) {
 };
 console.log(substract(15, 7));
 
-let vote = (age) => { //this is arrow function.
+let vote = (age) => {
+  //this is arrow function.
   return age >= 18 ? "can vote" : "can't vote";
 };
 console.log(vote(17));
+
+let justmsg = (user) => console.log(user); //no need to return, only need inside { parenthisis }
+
+console.log(justmsg("sai"));
+
+// iife function -- immediatly invoked function expression..
+let timer = (() => {
+  let count = 1;
+
+  return {
+    increment: function () {
+      count++;
+      console.log(count);
+    },
+    reset: function () {
+      count = 0;
+      console.log(count);
+    },
+  };
+})();
+
+console.log(timer.increment());
+console.log(timer.increment());
+console.log(timer.reset());
+console.log(timer.increment());
+
+console.log("----------------");
+const calculator = (function () {
+  let result = 0;
+
+  return {
+    add: function (x) {
+      result += x;
+      return result;
+    },
+    substract: function (x) {
+      result -= x;
+      return result;
+    },
+    getresult: function () {
+      return result;
+    },
+  };
+})();
+
+console.log(calculator.add(19));
+console.log(calculator.substract(7));
+console.log(calculator.getresult());
+
+
+function dummy() {
+  {
+    var x = 20;
+    var y = 40;
+  }
+
+  console.log(x, y);
+}
+dummy();
+
+
+function rummy() {
+  {
+    let result = (function () {
+      let x = 34;
+      let y = 321;
+      return {
+        x : x,
+        y : y
+      }
+    })();
+    console.log(result.x+result.y)
+  }
+}
+
+rummy();
