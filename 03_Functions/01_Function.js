@@ -125,6 +125,7 @@ console.log(calculator.substract(7));
 console.log(calculator.getresult());
 
 
+// make the var should through error without using let
 function dummy() {
   {
     var x = 20;
@@ -135,7 +136,7 @@ function dummy() {
 }
 dummy();
 
-
+//implemented iife
 function rummy() {
   {
     let result = (function () {
