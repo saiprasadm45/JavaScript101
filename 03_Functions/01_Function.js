@@ -70,15 +70,6 @@ const substract = function (num1, num2) {
 };
 console.log(substract(15, 7));
 
-let vote = (age) => {
-  //this is arrow function.
-  return age >= 18 ? "can vote" : "can't vote";
-};
-console.log(vote(17));
-
-let justmsg = (user) => console.log(user); //no need to return, only need inside { parenthisis }
-
-console.log(justmsg("sai"));
 
 // iife function -- immediatly invoked function expression..
 let timer = (() => {
@@ -152,3 +143,19 @@ function rummy() {
 }
 
 rummy();
+
+const person = {
+  name: "akash",
+  isLoggedIn: true,
+  greet: function () {
+    if (this.isLoggedIn) {
+      console.log(`hello ${this.name} you are logined successfully`);
+      console.log(this); //here this; refers to context here person is the context.
+    } else {
+      console.log(`you have not logined yet, can't show content`);
+    }
+  },
+};
+// person.isLoggedIn = false;
+// person.greet()
+
