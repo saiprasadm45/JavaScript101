@@ -4,3 +4,7 @@ if(!username){
 }else{
     console.log(username)
 }
+
+if(5>2){
+    console.log(true)
+}
