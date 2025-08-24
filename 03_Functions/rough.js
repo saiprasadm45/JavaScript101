@@ -123,3 +123,17 @@
 // let brand = 'toyota';
 // let color = 'blue'
 
+
+// check the array and object are empty or 
+
+let myarr = [];
+if(myarr.length === 0){
+    console.log("thisisemptyarray");
+    
+}
+
+let emptyobj = {};
+if(Object.keys(emptyobj).length === 0){
+    console.log("emmpty obj");
+    
+}
