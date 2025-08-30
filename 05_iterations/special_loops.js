@@ -1,3 +1,7 @@
+// for in : only for objects, gives keys and value pair
+// for of : use when you want to go through values of an array, string, etc.
+// foreach : array. (val,index,arry) You can’t use break or continue inside a forEach. If you need to stop early, use a normal for or for...of.
+
 const msg = "I Love India";
 console.log("hello " + msg);
 
