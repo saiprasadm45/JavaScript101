@@ -57,3 +57,13 @@ let user = {
 for (let [keys] in user) {
   console.log([keys]);
 }
+
+//map
+
+let map = new Map;
+map.set("in","india")
+map.set("fr", "france")
+
+for(const [key,value] of map){
+  console.log(key ,':=', value)
+}
