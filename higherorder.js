@@ -72,3 +72,9 @@ for(let items of myarr){
     
     console.log(items)
 }
+
+//filters==
+
+let numbers = [2,3,1,3,52,62,66,73,227,842,8,91]
+
+console.log(numbers.sort((a,b)=> a-b));
