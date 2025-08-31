@@ -79,5 +79,33 @@ let numbers = [2,3,1,3,52,62,66,73,227,842,8,91]
 
 console.log(numbers.sort((a,b)=> a-b));
 
-const even = numbers.filter((num)=> num % 2 == 0)
-console.log(even)
+const even = numbers.filter((num)=> {return num % 2 == 0})
+console.log(even, numbers)
+
+let words = ["gagan", 'suresh', 'ram', 'ac', 'devi']
+const eg = words.filter((items)=> items.length>=3)
+eg.sort((a,b)=> a.length - b.length)
+console.log(eg)
+
+//map
+let range = [2,4,5,6,7,8,22]
+// let range2 = []
+// range.forEach((num) =>{
+//     range2.push(num+10)
+//     // console.log(num+10)
+// })
+// console.log(range2)
+const newarr = range.map((num)=> num+10)
+
+console.log(newarr)
+
+let users = [
+  { name: "A" },
+  { name: "B" }
+];
+
+let usersWithId = users.map((user, i) => ({
+  id: i + 1,
+  ...user
+}));
+console.log(usersWithId);
