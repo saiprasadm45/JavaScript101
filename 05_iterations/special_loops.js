@@ -6,9 +6,9 @@ const msg = "I Love India";
 console.log("hello " + msg);
 
 for (let msgs of msg) {
-  if (msgs.includes(" ")) {
-    msgs.replace("Love", "hate");
-    console.log(msg);
+  if (msg.includes(" ")) {
+    let newm = msg.replaceAll(" ", "%");
+    console.log(newm);
   }
 }
 
@@ -47,6 +47,44 @@ for (let keys in student) {
 for (let course of student.courses) {
   console.log(course);
 }
-student.courses.forEach((index, val,arr) => {
+student.courses.forEach((val,index,arr) => {
   console.log(val, index,arr);
 });
+
+//map
+
+let map = new Map;
+map.set("in","india")
+map.set("fr", "france")
+
+for(const [key,value] of map){
+  console.log(key ,':=', value)
+}
+
+let coding = [ 
+    {
+        LanguageName : 'javascript',
+        extension : 'js'
+    },
+    {
+         LanguageName : 'java',
+        extension : 'java'
+    },
+    {
+         LanguageName : 'python',
+        extension : 'py'
+    }
+]
+
+coding.forEach((item)=>{
+    console.log(item.LanguageName)
+})
+
+let myinfo = {
+   first : ["supra","toyota"],
+   second : ["land-crusier", "defender"]
+}
+
+for(let info in myinfo){
+    console.log(myinfo[info][1])
+}
