@@ -1,15 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM practices</title>
+
+    <style>
+        .container{
+            width: 100%;
+            /* background-color: violet; */
+            display: flex;
+            gap: 25px;
+            padding: 10px 5px;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 3.5px solid rgb(0, 0, 0);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            min-width: 90px;
+
+        }
+        .box1,.box3{
+            background-color: blue;
+        }
+        .box2, .box4{
+            background-color: maroon;
+        }
+        #heading{
+            text-align: center;
+            font-family:cursive;
+            font-weight: 800;
+            font-size: 2rem;
+        }
+        .btn{
+            padding: 10px 15px;
+            border: none;
+            font-size: 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            }
+        .hide{
+            display: none;
+        }
+        .darkmode{
+            background-color: rgb(31, 30, 30);
+            color: white;
+        }
+         .lightmode{
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+        ul>li{
+            font-size: 2rem;
+            list-style:upper-roman;
+        }
+    </style>
+
 </head>
-<body>
 
-    
-    <script>
+<body id="body">
+    <nav style="display: flex; justify-content: space-between;">
+    <h1>MyFirst</h1>
+    <button class="btn" id="dark" style="margin: 8px 15px;">Dark Mode</button>
+    <!-- <button class="btn" id="light">Light Mode</button> -->
 
-    </script>
+    </nav>
+    <h2 id="heading">Hello Js from CoffywithKrish</h2>
+    <div class="container">
+        <div class="box" id="box1">Box 1</div>
+        <div class="box" id="box2">Box 2</div>
+        <div class="box" id="box3">Box 3</div>
+        <div class="box" id="box4">Box 4</div>
+        <button class="btn" id="hide"> Hide Me</button>
+        <button class="btn" id="show"> Show Me</button>
+
+
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    </div>
+
 </body>
+<script src="script.js"></script>
 </html>
