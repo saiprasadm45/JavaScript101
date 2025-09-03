@@ -41,6 +41,15 @@
             font-weight: 800;
             font-size: 2rem;
         }
+        #heading::after{
+            content: "_";
+            text-decoration: underline;
+            color: red;
+            display: none;
+        }
+        #heading:hover ::after{
+            display: block;
+        }
         .btn{
             padding: 10px 15px;
             border: none;

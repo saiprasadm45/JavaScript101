@@ -34,12 +34,13 @@
 
 // });
 
-let arr = ["hello", "js", "py", "cpp"];
+// let arr = ["hello", "js", "py", "cpp"];
 
-arr.forEach((val) => {
-    // console.log(val)
-    // return val.concat("hello")
-      console.log(`hello ${val}`)
-});
-console.log(`the new : ${arr}`);
-// console.log(newarr)
+// arr.forEach((val) => {
+//     // console.log(val)
+//     // return val.concat("hello")
+//       console.log(`hello ${val}`)
+// });
+// console.log(`the new : ${arr}`);
+// // console.log(newarr)
+
