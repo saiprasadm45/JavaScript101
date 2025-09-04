@@ -29,8 +29,16 @@ let hone = document.createElement("h1")
 hone.innerHTML = 'my heading'
 // hone.className = 'hone'
 // hone.id = 'myid'
-
+hone.style.color = 'red'
+hone.style.fontSize = '1rem'
+hone.style.textTransform = 'uppercase'
+hone.style.letterSpacing = '0.7px'
 hone.setAttribute("title","generateAI")
 // console.log(hone.style.color = 'red')
 let parent2 = document.querySelector('.parent2')
 parent2.appendChild(hone)
+
+let aday = document.createElement('div')
+aday.setAttribute('class','day')
+aday.innerHTML = 'Friday'
+parent.appendChild(aday)
