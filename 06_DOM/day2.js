@@ -26,8 +26,11 @@ console.log(parent.nextElementSibling.firstElementChild.innerHTML)
 console.log(parent.childNodes)
 
 let hone = document.createElement("h1")
-hone.className = 'hone'
-hone.id = 'myid'
+hone.innerHTML = 'my heading'
+// hone.className = 'hone'
+// hone.id = 'myid'
+
 hone.setAttribute("title","generateAI")
 // console.log(hone.style.color = 'red')
-// parent.appendChild(hone)
+let parent2 = document.querySelector('.parent2')
+parent2.appendChild(hone)
