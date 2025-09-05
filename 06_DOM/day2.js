@@ -42,3 +42,11 @@ let aday = document.createElement('div')
 aday.setAttribute('class','day')
 aday.innerHTML = 'Friday'
 parent.appendChild(aday)
+
+
+let addimg = document.createElement('img')
+addimg.setAttribute('src', 'https://i.imgflip.com/86wkdg.jpg')
+addimg.setAttribute('class','imghai')
+addimg.style.width = '100px'
+parent2.appendChild(addimg)
+console.log(parent2.childNodes)
