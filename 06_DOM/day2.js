@@ -21,9 +21,9 @@ let mymonday = document.querySelector(".day")
 mymonday.classList.add("okey")
 // console.log("hello" + mymonday.childNodes)
 
-console.log(mymonday.nextElementSibling.nextElementSibling.innerHTML)
-console.log(parent.nextElementSibling.firstElementChild.innerHTML)
-console.log(parent.childNodes)
+// console.log(mymonday.nextElementSibling.nextElementSibling.innerHTML)
+// console.log(parent.nextElementSibling.firstElementChild.innerHTML)
+// console.log(parent.childNodes)
 
 let hone = document.createElement("h1")
 hone.innerHTML = 'my heading'
@@ -50,3 +50,37 @@ addimg.setAttribute('class','imghai')
 addimg.style.width = '100px'
 parent2.appendChild(addimg)
 console.log(parent2.childNodes)
+
+let lorem = document.createElement('p')
+lorem.setAttribute('class','mypara')
+lorem.innerHTML = 'lorem epsum and arisement'
+lorem.style.color = 'red'
+
+parent.insertBefore(lorem, parent.firstElementChild)
+// parent2.appendChild(lorem)
+
+
+const mewo = document.createElement('h1')
+mewo.innerText = 'hello from h1'
+mewo.style.fontSize = '2rem'
+mewo.style.color = 'violet'
+mewo.style.border = '3px solid red'
+mewo.setAttribute('id','myhead')
+console.log(mewo.innerHTML)
+document.body.insertBefore(mewo, parent2)
+console.log(document.body.firstChild)
+// parent2.after()
+
+const removing = document.getElementById('myhead')
+removing.after(lorem)
+// lorem.remove()
+
+const newp = document.createElement('p')
+newp.innerHTML = 'im new para'
+// document.body.appendChild(newp)
+document.body.replaceChild(newp, removing)
+
+const bday = document.getElementById('bornday')
+const newelment = document.createElement('h3').innerHTML = '24oct'
+// parent.appendChild(newelment)
+// parent.replaceChild(newelment, bday)
