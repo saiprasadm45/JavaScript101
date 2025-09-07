@@ -81,6 +81,7 @@ newp.innerHTML = 'im new para'
 document.body.replaceChild(newp, removing)
 
 const bday = document.getElementById('bornday')
-const newelment = document.createElement('h3').innerHTML = '24oct'
-// parent.appendChild(newelment)
-// parent.replaceChild(newelment, bday)
+const newelment = document.createElement('h3')
+newelment.innerHTML = 'im new h3 bhidu'
+parent.appendChild(newelment)
+parent.replaceChild(newelment, bday)
