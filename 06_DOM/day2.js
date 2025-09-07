@@ -130,4 +130,11 @@ let parent3 = document.querySelector('.language')
 const secondLang = parent3.querySelector('li:nth-child(2)')
 const newlang = document.createElement('li')
 newlang.innerHTML = 'typescript'
-parent3.replaceChild(newlang, secondLang)
+// parent3.replaceChild(newlang, secondLang)
+secondLang.replaceWith(newlang)
+
+const firstlang = parent3.querySelector('li:first-child')
+firstlang.outerHTML = '<li>Rust</li>'
+
+const lastLang = parent3.querySelector('li:last-child')
+lastLang.remove()
