@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg changer by HC</title>
+</head>
+<style>
+    .wrapper{
+        margin: 100px auto 100px;
+        /* border: 2px solid black; */
+        text-align: center;
+    }
+    .button{
+        width: 150px;
+        border: 1px solid black;
+        height: 150px;
+        /* display: inline; */
+
+    }
+    .boxes{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center ;
+        gap: 2rem;
+    }
+    #red{
+        background-color: red;
+    }
+    #gray{
+        background-color: rgb(75, 73, 73);
+    }
+    #blue{
+        background-color: blue;
+    }
+    #pink{
+        background-color: pink;
+    }
+    #yellow{
+        background-color: yellow;
+    }
+    #display{
+        width: 100%;
+        height: 80px;
+        border: 2px dotted black;
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+</style>
+<body id="body">
+    <div class="wrapper">
+        <h1>Color Scheme Switcher</h1>
+       <div class="boxes">
+         <div class="button" id="red"></div>
+        <div class="button" id="gray"></div>
+        <div class="button" id="blue"></div>
+        <div class="button" id="pink"></div>
+        <div class="button" id="yellow"></div>
+       </div>
+        <h2>
+            Try clicking on one of the colors above
+            <span>to change the background color of this page!</span>
+        </h2>
+
+        <div id="display">
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
