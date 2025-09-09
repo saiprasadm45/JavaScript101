@@ -55,8 +55,9 @@ form.addEventListener("submit", (e) => {
     result.style.backgroundColor = 'greenYellow'
     result.style.borderRadius = '15px'
     result.style.padding = '2rem'
+    result.style.fontSize = '2rem'
     result.style.margin = '1rem'
-    result.innerHTML = `<span>hello ${userName}, your bmi is: ${bmi} & your category is: ${finalresult}</span>`;
+    result.innerHTML = `<span>Hello ${userName}, your BMI is: ${bmi} and your are : ${finalresult}</span>`;
     return;
   }
 });
