@@ -2,7 +2,6 @@ let form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("form submitted");
   let userName = document.querySelector("#name").value.trim();
   let height = parseInt(document.querySelector("#height").value);
   let weight = parseInt(document.querySelector("#weight").value);

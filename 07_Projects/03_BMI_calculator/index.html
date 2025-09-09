@@ -10,6 +10,7 @@
 <style>
     body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
@@ -87,7 +88,8 @@
         margin-top: 1rem;
         cursor: pointer;
     }
-    #weight-guide{
+
+    #weight-guide {
         display: flex;
         background-color: rgb(247, 243, 243);
         flex-direction: column;
@@ -95,7 +97,8 @@
         align-items: center;
         text-align: justify;
     }
-     #weight-guide h3{
+
+    #weight-guide h3 {
         font-size: 2.3rem;
         width: 100%;
         text-align: center;
@@ -103,8 +106,9 @@
         /* padding: 0.5rem; */
         margin: 1.2rem;
         font-family: 'Times New Roman', Times, serif;
-     }
-      #weight-guide p{
+    }
+
+    #weight-guide p {
         font-size: 1rem;
         margin: 0.5rem;
         background-color: white;
@@ -112,8 +116,9 @@
         width: 100%;
         padding: 0.5rem;
         border-radius: 4px;
-      }
-      #result{
+    }
+
+    #result {
         text-align: center;
         font-size: 1.2rem;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -122,7 +127,26 @@
         font-weight: 500;
         color: rgb(238, 0, 0);
         margin: 1rem 0;
-      }
+    }
+
+    #footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        background-position: top left;
+        object-fit: cover;
+        background-image: url(./gradient.png);
+        margin-bottom: 0;
+    }
+    #footer h2{
+        color: white;
+        font-size: 2rem;
+
+    }
 </style>
 
 <body>
@@ -136,23 +160,23 @@
         <form action="#">
             <div>
                 <label for="name">Enter Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Rohit sharma">
+                <input type="text" id="name" name="name" placeholder="Enter Your Name">
             </div>
             <br>
             <div>
                 <label for="height">Height</label>
-                <input type="text" name="height" id="height">
+                <input type="text" name="height" id="height" placeholder="Enter Your Height">
             </div>
             <br>
             <div>
                 <label for="weight">Weight</label>
-                <input type="text" name="weight" id="weight">
+                <input type="text" name="weight" id="weight" placeholder="Enter Your Weight">
             </div>
             <br>
             <button id="submit">Calculate BMI</button>
         </form>
         <div id="result">
-        
+
         </div>
         <div id="weight-guide">
             <h3>BMI Weight Guide</h3>
@@ -161,7 +185,12 @@
             <p>Overweight = Greater than 24.9</p>
         </div>
     </div>
+    <div id="footer">
+        <h2>Made With &#10084; by PRASAD</h2>
+    </div>
 </body>
+
 </html>
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 </html>
