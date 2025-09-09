@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<style>
+    body{
+        background: url(./red-yellow-watercolor.jpg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* flex-direction: column; */
+        height: 100vh;
+        /* width: 100%; */
+        overflow: hidden;
+    }
+    .wrapper{
+        width: 100%;
+        max-width: 300px;
+        border: 2px solid rgb(82, 141, 53);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrapper h1{
+        font-size: 2rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: aqua;
+        text-decoration: wavy;
+    }
+    #clock{
+        width: 220px;
+        border: 2px solid slateblue;
+        height: 90px;
+        text-align: center;
+        padding: 1rem;
+        padding-top: 0.2rem;
+        box-sizing: border-box;
+        font-size: 2rem;
+        background-color: yellow;
+
+    }
+    .date{
+        color: blueviolet;
+        font-weight: 600;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .time{
+        color: blue;
+        font-weight: 800;
+        font-family: cursive;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <h1>Your Local Time</h1>
+        <div id="clock">
+            <div class="date"></div>
+            <div class="time"></div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
