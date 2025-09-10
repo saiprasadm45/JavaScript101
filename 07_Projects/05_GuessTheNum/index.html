@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 350px;
+        /* display: flex; */
+        background-color: beige;
+        padding: 2rem;
+        border-radius: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        text-decoration: underline;
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        margin: 0 0 0.5rem;
+        text-align: center;
+        padding: 0;
+    }
+
+    form {
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #guess {
+        font-size: 1.3rem;
+    }
+
+    #guessfield {
+        border: none;
+        margin: 0.3rem 0;
+        padding: 0.3rem;
+        border-radius: 5px;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    #guessfield:focus{
+        border: 1px solid rgb(29, 29, 108);
+    }
+    #submt {
+        padding: 0.8rem;
+        border-radius: 5px;
+        transition: all 1s;
+        cursor: pointer;
+        background-color: rgba(59, 134, 109, 0.717);
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+    }
+    .resultparas p{
+        font-size: 1.1rem;
+    }
+    .resultparas p:first-child{
+     margin-top: 0.5rem;
+    }
+    @media (max-width:500px) {
+        
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <h1>Number Guessing Game</h1>
+        <p>Try and guess a random number between 0 to 100</p>
+        <p>You have 10 attempts to guess the right number</p>
+        <form action="#">
+            <label for="guessfield" id="guess">Guess The Number</label>
+            <input type="text" id="guessfield" class="guessfield">
+            <input type="submit" id="submt" value="Submit Guess">
+        </form>
+
+        <div class="resultparas">
+            <p>Previous Result: <span class="guesses"></span></p>
+            <p>Guesses remaining: <span class="remain">10</span></p>
+            <p class="loOrhi"></p>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
