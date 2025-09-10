@@ -1,85 +1,179 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess The Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Sora', 'Inter', Arial, sans-serif;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            backdrop-filter: blur(18px) saturate(180%);
+            -webkit-backdrop-filter: blur(18px) saturate(180%);
+            border-radius: 28px;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            padding: 2.7rem 2rem 2rem 2rem;
+            margin: 1.5rem 0 0 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Sora', Arial, sans-serif;
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #1a2233;
+            margin: 0 0 0.7rem 0;
+            text-shadow: 0 2px 12px rgba(31, 38, 135, 0.08);
+        }
+
+        p {
+            margin: 0 0 0.7rem 0;
+            text-align: center;
+            padding: 0;
+            color: #2d3a4a;
+            font-size: 1.08rem;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            position: relative;
+        }
+
+        .floating-label {
+            position: absolute;
+            left: 18px;
+            top: 18px;
+            font-size: 1.1rem;
+            color: #6c7a89;
+            background: rgba(255,255,255,0.7);
+            padding: 0 0.5rem;
+            border-radius: 8px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px) scale(0.95);
+            transition: all 0.25s cubic-bezier(.4,2,.6,1);
+            font-family: 'Sora', Arial, sans-serif;
+            font-weight: 600;
+            z-index: 2;
+        }
+        .show-label {
+            opacity: 1;
+            transform: translateY(-32px) scale(1.05);
+            color: #4158D0;
+            box-shadow: 0 2px 8px rgba(65, 88, 208, 0.08);
+        }
+
+        #guessfield {
+            border: none;
+            padding: 1.1rem 1rem 0.7rem 1rem;
+            border-radius: 12px;
+            font-size: 1.4rem;
+            background: rgba(255,255,255,0.85);
+            box-shadow: 0 2px 12px rgba(65, 88, 208, 0.10);
+            transition: box-shadow 0.2s, border 0.2s;
+            margin-bottom: 0.2rem;
+            width: 100%;
+        }
+        #guessfield:focus{
+            border: 2px solid #4158D0;
+            outline: none;
+            box-shadow: 0 0 0 2px #C850C0;
+        }
+        #submt {
+            padding: 1.1rem;
+            border-radius: 12px;
+            transition: all 0.25s cubic-bezier(.4,2,.6,1);
+            cursor: pointer;
+            background: linear-gradient(90deg, #4158D0 0%, #C850C0 100%);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            border: none;
+            box-shadow: 0 2px 12px rgba(65, 88, 208, 0.13);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        #submt:hover {
+            background: linear-gradient(90deg, #C850C0 0%, #4158D0 100%);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 18px rgba(65, 88, 208, 0.18);
+        }
+        #submt:active {
+            filter: brightness(1.15) saturate(1.5);
+            background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+            color: #22223b;
+        }
+        .resultparas p{
+            font-size: 1.1rem;
+            color: #22223b;
+            background: rgba(255,255,255,0.5);
+            border-radius: 6px;
+            margin: 0.3rem 0;
+            padding: 0.4rem 0.7rem;
+            box-shadow: 0 1px 4px rgba(65, 88, 208, 0.07);
+        }
+        .resultparas p:first-child{
+            margin-top: 0.5rem;
+        }
+        .game-hints {
+            margin-top: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .game-hints p {
+            color: #fff;
+            font-size: 1.08rem;
+            opacity: 0.7;
+            background: none;
+            box-shadow: none;
+            margin: 0;
+            padding: 0.2rem 0;
+            font-family: 'Inter', Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+        @media (max-width:600px) {
+            .wrapper {
+                max-width: 98vw;
+                padding: 1.2rem 0.5rem;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            #guessfield {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
 
-    .wrapper {
-        width: 100%;
-        max-width: 350px;
-        /* display: flex; */
-        background-color: beige;
-        padding: 2rem;
-        border-radius: 20px;
-    }
-
-    h1 {
-        text-align: center;
-        text-decoration: underline;
-        margin: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    p {
-        margin: 0 0 0.5rem;
-        text-align: center;
-        padding: 0;
-    }
-
-    form {
-        /* background-color: red; */
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    #guess {
-        font-size: 1.3rem;
-    }
-
-    #guessfield {
-        border: none;
-        margin: 0.3rem 0;
-        padding: 0.3rem;
-        border-radius: 5px;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    #guessfield:focus{
-        border: 1px solid rgb(29, 29, 108);
-    }
-    #submt {
-        padding: 0.8rem;
-        border-radius: 5px;
-        transition: all 1s;
-        cursor: pointer;
-        background-color: rgba(59, 134, 109, 0.717);
-        font-size: 1rem;
-        font-weight: 600;
-        color: white;
-    }
-    .resultparas p{
-        font-size: 1.1rem;
-    }
-    .resultparas p:first-child{
-     margin-top: 0.5rem;
-    }
-    @media (max-width:500px) {
-        
-    }
 </style>
 
 <body>
@@ -87,9 +181,9 @@
         <h1>Number Guessing Game</h1>
         <p>Try and guess a random number between 0 to 100</p>
         <p>You have 10 attempts to guess the right number</p>
-        <form action="#">
-            <label for="guessfield" id="guess">Guess The Number</label>
-            <input type="text" id="guessfield" class="guessfield">
+        <form action="#" autocomplete="off" style="position:relative;">
+            <span class="floating-label" id="floatingLabel">Guess The Number</span>
+            <input type="text" id="guessfield" class="guessfield" placeholder="Enter your guess...">
             <input type="submit" id="submt" value="Submit Guess">
         </form>
 
@@ -99,6 +193,19 @@
         </div>
     </div>
 </body>
+<script>
+// Floating label animation
+const guessField = document.getElementById('guessfield');
+const floatingLabel = document.getElementById('floatingLabel');
+guessField.addEventListener('focus', () => {
+    floatingLabel.classList.add('show-label');
+});
+guessField.addEventListener('blur', () => {
+    if (!guessField.value) floatingLabel.classList.remove('show-label');
+});
+// Show label if value exists on load
+if (guessField.value) floatingLabel.classList.add('show-label');
+</script>
 <script src="script.js"></script>
 
 </html>
