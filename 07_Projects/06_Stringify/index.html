@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stringify</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        background: rgb(79, 12, 12);
+        border: 2px solid greenyellow;
+        border-radius: 10px;
+        width: 300px;
+        height: 200px;
+    }
+    .wrapper2{
+        gap: 2rem;
+
+    }
+    #text{
+        border-radius: 8px;
+        color: black;
+        /* font-size: 3rem; */
+        margin-top: 0;
+        width: 100%;
+        height: 40px;
+    }
+    #head{
+        font-size: 2rem;
+        color: white;
+        margin: 0;
+        
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <h1 id="head">Text Converter</h1>
+        <div class="wrapper2">
+            <form action="">
+               <input type="text" id="text" name="text" placeholder="Enter Text Here..">
+                <div class="buttons">
+                    <button id="uppercase">Uppercase</button>
+                    <button id="lowercase">Lowercase</button>
+                    <button id="clear">Clear</button>
+                    <button id="delete">Delete</button>
+                </div>
+                <div class="info">
+                <p id="totalchar"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="brain.js"></script>
+
+</html>
