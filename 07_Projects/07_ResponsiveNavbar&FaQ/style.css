@@ -96,6 +96,98 @@ i.hamburger{
 }
 @media (max-width: 565px){
     nav{
-        padding-inline: 1rem;
+        padding: 0.5rem 1rem;
     }
+}
+
+/* ================================= */
+/* ===== FAQ STYLES START HERE ===== */
+/* ================================= */
+
+/* This is the main container for the entire FAQ section. */
+.faq-section {
+    padding: 4rem 2rem; /* Adds space around the FAQ section. */
+    display: flex; /* Enables flexbox for alignment. */
+    flex-direction: column; /* Stacks children (title and container) vertically. */
+    align-items: center; /* Centers the children horizontally. */
+    width: 100%; /* Ensures it takes the full width of its parent. */
+}
+
+/* This is the main title of the FAQ section. */
+.faq-section h2 {
+    font-size: 2.5rem; /* Sets the font size for the title. */
+    color: #333; /* A dark grey color for the text. */
+    margin-bottom: 2rem; /* Adds space below the title. */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* This is the white card that holds all the FAQ items. */
+.faq-container {
+    width: 100%; /* Takes the full width of its parent. */
+    max-width: 700px; /* Prevents it from getting too wide on large screens. */
+    background-color: white; /* A clean white background. */
+    border-radius: 10px; /* Rounds the corners of the card. */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a floating effect. */
+}
+
+/* This is the container for a single question-answer pair. */
+.faq-item {
+    border-bottom: 1px solid #e0e0e0; /* A light grey line to separate items. */
+}
+.faq-item:last-child {
+    border-bottom: none; /* Removes the line from the very last item. */
+}
+
+/* This is the clickable area that contains the question text and the icon. */
+.faq-question {
+    display: flex; /* Enables flexbox. */
+    justify-content: space-between; /* Pushes the text and icon to opposite ends. */
+    align-items: center; /* Aligns them vertically in the middle. */
+    padding: 1.2rem 1.5rem; /* Adds comfortable spacing inside the question bar. */
+    cursor: pointer; /* Changes the mouse to a pointer to show it's clickable. */
+}
+
+/* This styles the question text itself. */
+.faq-question p {
+    font-size: 1.1rem; /* Sets the font size. */
+    font-weight: 600; /* Makes the font slightly bolder. */
+    color: #444; /* A slightly lighter dark grey. */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* This styles the dropdown icon. */
+.faq-question i {
+    font-size: 1.2rem; /* Sets the size of the icon. */
+    color: seagreen; /* Matches the icon color to your navbar theme. */
+    transition: transform 0.3s ease-in-out; /* This is key! It animates the icon's rotation. */
+}
+
+/* This is the container for the answer text. */
+.faq-answer {
+    max-height: 0; /* This is the magic! It hides the answer by default. */
+    overflow: hidden; /* This ensures the content inside doesn't spill out when hidden. */
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; /* Animates the height and padding smoothly. */
+}
+
+/* This styles the answer text itself. */
+.faq-answer p {
+    font-size: 1rem; /* Sets the font size for the answer. */
+    line-height: 1.6; /* Increases the space between lines for readability. */
+    color: #555; /* A medium grey for the answer text. */
+    padding: 0 1.5rem; /* Initially no vertical padding. */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* --- The 'active' state --- */
+/* This class will be added with JavaScript when an item is clicked. */
+
+/* When a .faq-item is active, we target the .faq-answer inside it. */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* We animate the height to a value large enough to show the content. */
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem; /* We add padding back to give it space. */
+}
+
+/* When a .faq-item is active, we target the icon inside it. */
+.faq-item.active .faq-question i {
+    transform: rotate(180deg); /* This rotates the chevron icon to point upwards. */
 }
