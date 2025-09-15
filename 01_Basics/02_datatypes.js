@@ -31,7 +31,7 @@ console.log(typeof b) //string
 
 let c = -14.5;
 console.log(c)
-console.log(typeof c)
+console.log(typeof c) //number
 
 let d = 14 / "jk"
 console.log(d) //nan
