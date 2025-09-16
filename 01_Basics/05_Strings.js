@@ -49,7 +49,7 @@ console.log(city.slice(4)) //if single value provided it starts from there
 console.log(city.slice(4,8)) // starts from first value to end-1
 console.log(city.slice(-7)) //if one negative value provided length - value , and it will start from there.
 console.log(city.slice(-7,-4)) //length - values so 10-7=3, 10-4=6 so starts from 3, 6
-console.log(city.slice(-4,-7)) // wonnt work because must be start < end
+console.log(city.slice(-4,-7)) // wonnt work because must be start < end; returns empty
 console.log(city.slice(4,-2)) // start from 4 and go till 8.
 
 const gameName = new String("hitesh-hc")
