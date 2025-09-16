@@ -11,7 +11,7 @@ console.log(firstNum % secondNum)
 console.log(firstNum ** secondNum)
 
 
-//console.log("5" * "2")  // only plus can perfom concat string; else remaining operations convert string to numb and perform task..
+console.log("5" * "2")  // only plus can perfom concat string; else remaining operations convert string to numb and perform task..
 let value = 55;
 let negvalue = -value;
 // console.log(negvalue)
