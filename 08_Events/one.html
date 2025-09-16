@@ -37,7 +37,7 @@
 
     //addeventlistener third parameter is usecapture which is default false.
     document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('owl').addEventListener('mouseover', (e) => {
+        document.getElementById('owl').addEventListener('click', (e) => {
             // console.log('hello owl clicked', e)
               owl.style.border = '5px solid yellow';
         })
@@ -74,6 +74,7 @@
 </body>
 </html>
 
-//target is where the click event occured like where we clicked, best for getting id etcc, 
-//currentTarget is where the event is assigned like addeventlistener.
-//propogations works like (top to bottom - target - bottom to top), if anything correct in that phases if fired immediatly..
+<!-- target is where the click event occured like where we clicked, best for getting id etcc, 
+currentTarget is where the event is assigned like addeventlistener.
+propogations works like (top to bottom - target - bottom to top), if anything correct in that phases if fired immediatly..
+stoppropogation used to stop further propogations -->
