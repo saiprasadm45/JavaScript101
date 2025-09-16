@@ -62,13 +62,36 @@ console.log(someeven.some(num => num % 2 == 0)) ////takes function, return true 
 
 const arr01 = [45,79,1,36,7,69,17,5]
 console.log(arr01)
-const arr02 = arr01.copyWithin(4,4,-7)  // index, start, end exclusive. // copies from the start index to last index-1, at given index. //Copies part of the array to another location in the same array, without changing its size
+const arr02 = arr01.copyWithin(3,4,7)  // target index, start, end exclusive. // copies from the start index to last index-1, at given target index. //Copies part of the array to another location in the same array, without changing its size
 console.log(arr02)
 console.log(arr01)
 
 const arrfill = [1,2,3,4,5,6,7]
 console.log(arrfill)
-const arrfill2 = arrfill.fill(0,2,4) // value, start, end exlusie // insert the value at start and last index-1, replacing orginal values
+const arrfill2 = arrfill.fill(0,2,4) // value to be filled, start, end exlusie // insert the value at start and last index-1, replacing orginal values
 console.log(arrfill2)
 
 // copywithin and fill done with orignal data.
+
+//convert an obj into an array
+
+let user = {
+    name : "hitesh",
+    age : 27,
+    email : 'hitesh@google.com'
+}
+
+let arr1 = Object.entries(user)
+console.log(arr1)
+
+//array destructuring.
+
+let num = [13,35,35,2]
+let [a,b,,d] = num;
+console.log(a,b,d)
+
+let [p,q,r, ,g = 22] = num//default value
+console.log(p,q,r,g);
+
+let [first, ...remains] = num; //rest operator always gives result in array
+console.log(first, remains) 
