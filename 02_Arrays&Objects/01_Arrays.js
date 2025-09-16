@@ -36,7 +36,7 @@ console.log(arr.includes(4)) //check weather this element exists or not, return 
 console.log(arr.indexOf(9)) // gives index of element, if no index exists gives -1
 console.log(arr.lastIndexOf(5)) //gives an index of last similar element if exists
 
-newarr = arr.join(); // returns string of an array; // not any changes in original array
+let newarr = arr.join(","); // returns string of an array; // not any changes in original array
 
 console.log(newarr, typeof newarr)
 
@@ -55,16 +55,18 @@ arrb[9] = 9
 // console.log(arrb)
  
 const arrc = Array.of(7,7,5) //another way t0 create array
+console.log(`the arrc is: ${arrc.length}`);
+
 arrc[2] = "new"
 arrc[3] = 'chaku'
 arrc [7] = 'seven'
-console.log(arrc[7], arrc.length)
+console.log(arrc[7], arrc.length, `the new arcc is: ${arrc}`)
 
 // console.log(arrc, typeof arrc)
 
 let arr2 = new Array(4, 5, 6); //using constructor
 arr2[3]= 'hllo'
-console.log(arr2, arr2[3])
+console.log(arr2, arr2[3], arr2.length)
 
 
 console.log("before slice operation- ", myArray) //A [ 7, 'nayn', 49, 3598, 17, 'node', 'added' ]
@@ -82,7 +84,7 @@ console.log(myArray.slice(1, 6).reverse()) //it will reverse. → ['nayn', 49, 3
 
 console.table([temparr,temparr1,temparr2,temparr3,temparr4,temparr5,temparr6,temparr7])
 
-console.log("after slice operation- ", myArray)
+console.log("after slice operation- ", myArray) // slice won't change in org array
 const reversingarra = myArray.reverse() // reverse array affects on real array it changes original ones.
 console.log(myArray, reversingarra) //this will rsult-> [ 'added', 'node', 17, 3598, 49, 'nayn', 7 ]
 
@@ -90,12 +92,13 @@ console.log(myArray, reversingarra) //this will rsult-> [ 'added', 'node', 17, 3
 /* splice */
 
 //splice works on original data.
+console.log('splicing');
 
-let spliceeg1 = myArray//.splice(0,3) // splice(start, deletecount) inclusive
+// let spliceeg1 = myArray.splice(0,3) // splice(start, deletecount) inclusive
 // console.log(myArray, spliceeg1) 
 
-let spliceeg2 = myArray.splice(1,0, "node", 'js', "successfuly")
-console.table([myArray, spliceeg1])
+let spliceeg2 = myArray.splice(1,1, "node", 'js', "successfuly")
+console.table([myArray, spliceeg2])//here spliceeg2 gives deleted value.
 
 let spliceeg3 = myArray.splice(4,1)
 console.table([myArray, spliceeg3])
