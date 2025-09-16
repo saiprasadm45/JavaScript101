@@ -60,14 +60,14 @@ let keys = Object.keys(user) // gives all keys of object
 let values = Object.values(user) // gives all values of object, for function act as obj.fun not obj.fun() means {function: anonymous}
 let entries = Object.entries(user) // gives object with key value pair, for function act as obj.fun not obj.fun() means {function: anonymous}
 
-console.log(keys)//returned dataypes is array.
-console.log(values)//returned dataypes is array.
-console.log(entries)//returned dataypes is array.
+console.log(keys) //returned dataypes is array.
+console.log(values) //returned dataypes is array.
+console.log(entries) //returned dataypes is array.
 
 console.log(user)
 Object.seal(user)
-user.grade = 'B'
-delete user.isLoggedin
+// user.grade = 'B'
+// delete user.isLoggedin
 user.email = 'learningObject@com'
 console.log(user)
 
@@ -95,12 +95,12 @@ console.log(nestedobj.eudcation.school.college.engineering)
 const data = {1 : 'a', 2 : 'b', 3 : 'c', 4 : 'd'}
 const data2 = {5 : 'e', 6 : 'f', 7 : 'g', 8 : 'h'}
 
-// const finaldata = {...data, ...data2, 9 : 'i}
+const finaldata = {...data, ...data2, 9 : 'i'}
 // const finaldata = 
-// console.log(finaldata)
+console.log(finaldata)
 
-/*
-convert a existing variables into an object => 
+
+//convert a existing variables into an object => 
 
 const place = 'mumbai'
 const street = 'newyork'
@@ -108,7 +108,17 @@ const address = {
     place, street
 }
 console.log(address)
- */
+
+//custom key names for existing variabls into an obj =>
+
+const kamkaj = "officer";
+const nam = 'mohan'
+
+let employee = {
+    userName : nam, job : kamkaj
+} 
+console.log(employee)
+
 
 let key = "score";
 let obj = {
@@ -120,14 +130,33 @@ console.log(obj[key]) //42
 console.log(obj["key"]) //undefined
 console.log(obj) // {score : 42}
 
-/*
-object is referece data type, 
+
+// object is referece data type, 
 let p = {
     a : 'raj',
-    b : 'kapoor'add
+    b : 'kapoor'
 }
 let c = p;
 c.a = 'rishi'
-console.log(c.a)
+console.log(c,p)
 
-*/
+//convert array into obj
+
+let arr = ['a','b','c']
+let zw = {...arr}
+console.log(zw);
+
+//custom keys for array into obj
+
+let zw2 = {
+    name : arr[0],
+    name2 : arr[1],
+    name3 : arr[2]
+}
+console.log(zw2);
+
+//if global array has pairs array like [['name','sur'],['sur','22']]
+let myArr = [['name','pankaj'],['age','22']]
+
+let obj7 = Object.fromEntries(myArr)
+console.log(obj7);

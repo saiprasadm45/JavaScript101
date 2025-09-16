@@ -21,7 +21,7 @@ const holder = [
   {
     name: 'raj',
     age: 18
-  }
+  } 
 ]
 console.log(holder[0].name) //satish
 console.log(holder[1].age)//18
@@ -73,8 +73,6 @@ const players = {
     name: 'm s dhoni',
     jearsy_no: '7'
 }
-
-
 
 const{name, jearsy_no} = players //destructuring.
 console.log(name, typeof name)//m s dhoni, object
