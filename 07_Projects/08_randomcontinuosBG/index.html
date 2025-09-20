@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script>
+        let start = document.querySelector('#start')
+        let rukao = document.querySelector('#stop')
+        let clearkaro;
+        let generatecolor = () => {
+            let HEX = '0123456789ABCDEF';
+            let color = '#';
+
+            for (let i = 0; i < 6; i++) {
+                color += HEX[Math.floor(Math.random() * 16)]
+            }
+            return color;
+            console.log(color)
+        }
+
+        start.addEventListener('click', () => {
+            function changebg (){
+            let bodycolor = document.body.style.backgroundColor = generatecolor();
+            }
+           if(!clearkaro){
+             clearkaro = setInterval(changebg, 1000)
+           }
+        })
+
+        rukao.addEventListener('click', () => {
+            clearInterval(clearkaro)
+            clearkaro = null;
+        })
+    </script>
+</body>
+
+</html>
