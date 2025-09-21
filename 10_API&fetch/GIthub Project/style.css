@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+}
+.myimg{
+    width: 200px;
+    display: none;
+}
+/* .follow .account{
+    display: flex;
+} */
