@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper {
+        border: 2px solid red;
+        padding: 1rem 1.5rem;
+        width: 450px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <h1>MY APID</h1>
+        <div class="temperature"></div>
+        <div class="time"></div>
+        <div class="wind"></div>
+        <div class="latitude"></div>
+    </div>
+
+    <script>
+        let temp = document.querySelector('.temperature')
+        let time = document.querySelector('.time')
+        let wind = document.querySelector('.wind')
+        let space = document.querySelector('.latitude')
+        let url = "https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&current_weather=true";
+
+        // function update() {
+        //     fetch(url)
+        //         .then((Response) => {
+        //             return Response.json()
+        //         }).then((data) => {
+        //             // console.log('the data is ' , data)
+        //             calling(data)
+        //         }).catch((err) => {
+        //             console.log(`the error is : ${err}`)
+        //         })
+
+        // }
+        temp.innerHTML = wind.innerHTML = space.innerHTML = "Loading...";
+        async function fetchData() {
+            try {
+                const data = await fetch(url);
+                const Response = await data.json()
+                calling(Response);
+            } catch (err) {
+                console.error("Fetch failed:", err);
+                temp.innerHTML = wind.innerHTML = space.innerHTML = `<p style="color: red;">Error loading data</p>`
+            }
+        }
+        // fetchData()
+
+
+        setInterval(fetchData, 1000)
+        setInterval(fetchData, 1000)
+
+
+        function calling(info) {
+
+            // const isotime = info.current_weather.time;
+            let mydate = new Date().toLocaleString();
+            time.innerHTML = `<h2> The current Time is ${mydate} `
+            temp.innerHTML = `<p>The temperature is: ${info.current_weather.temperature}°C</p>`;
+            wind.innerHTML = `<h2>The wind speed is: ${info.current_weather.windspeed} km/h</h2>`;
+            space.innerHTML = `<p>GeoLocation: <b>${info.latitude}</b>, <b>${info.longitude}</b></p>`;
+
+        }
+    </script>
+</body>
+
+</html>
