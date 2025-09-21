@@ -1,37 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIT_HUB PROFILE VIEWER</title>
+    <meta name="description" content="A modern GitHub Profile Viewer to explore GitHub users and their stats">
+    <meta name="theme-color" content="#0d1117">
+    <title>GitHubLens - Modern Profile Viewer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="input">
-            <label for="usrnm">Enter github username</label>
-            <input type="text" id="usrnm">
-            <button id="btn">CLICK ME!</button>
-        </div>
-        <div class="result"></div>
-        <h1 id="username"></h1>
-        <img class="myimg" src="" alt="profileview">
-        <p><a class="profileurl" href="" target="_blank"></a></p>
-        <h1 class="name"></h1>
-        <h5 class="email"></h5>
-        <p class="bio"></p><br>
-        <p class="publicrepo"></p>
-        <div class="follow">
-            <h2 class="followers"></h2>
-            <h2 class="following"></h2>
-        </div>
-        <div class="account">
-            <p class="creation"></p>
-            <p class="lastupdate"></p>
-        </div>
-    </div>
+    <main class="app-container">
+        <header class="search-header">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="usrnm" 
+                        placeholder="Search GitHub username..." 
+                        aria-label="GitHub username"
+                    >
+                    <button id="btn" class="search-button">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <section class="error-container" aria-live="polite">
+            <div class="result"></div>
+        </section>
+
+        <section class="profile-container" aria-live="polite">
+            <!-- Loading Skeleton -->
+            <div class="skeleton-loader hidden">
+                <div class="skeleton avatar"></div>
+                <div class="skeleton text"></div>
+                <div class="skeleton text"></div>
+                <div class="skeleton text-long"></div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <div class="profile-header">
+                    <img class="profile-avatar myimg" src="" alt="Profile avatar" loading="lazy">
+                    <div class="profile-info">
+                        <h1 id="username" class="profile-username"></h1>
+                        <h2 class="name"></h2>
+                        <p class="bio"></p>
+                    </div>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-book-bookmark"></i>
+                        <span class="publicrepo"></span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <span class="followers"></span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="following"></span>
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <span class="email"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar"></i>
+                        <span class="creation"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span class="lastupdate"></span>
+                    </div>
+                    <a class="profileurl profile-link" href="" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
     <script src="script.js"></script>
