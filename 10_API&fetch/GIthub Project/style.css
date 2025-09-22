@@ -31,16 +31,12 @@ body {
     margin: 0 auto;
 }
 
-/* Search Header */
-.search-header {
-    margin-bottom: 2rem;
-}
-
 .search-container {
     background-color: var(--secondary-color);
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
 }
 
 .search-box {
