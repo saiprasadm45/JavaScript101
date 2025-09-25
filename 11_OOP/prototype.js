@@ -35,3 +35,16 @@ Obj2.printObject();
 
 delete Obj2.name;//deleting property
 console.log(Obj2)
+
+
+Object.prototype.sum= function() {
+    console.log(this.a + this.b);
+}
+
+let Obj1 = {
+    a: 10,
+    b: 20
+}
+
+Obj1.sum();
+// console.log(car2)
