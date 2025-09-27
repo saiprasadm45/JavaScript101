@@ -85,4 +85,4 @@ liabrary.prototype.read = function(){
     console.log(`the book name is ${this.book} and the catergory is ${this.catergory}`)}
 
 let book1 = new liabrary('java','programming')
-book1.read()    
+book1.read()
