@@ -48,3 +48,41 @@ let Obj1 = {
 
 Obj1.sum();
 // console.log(car2)
+
+Object.prototype.printme = function(){
+	console.log(`the username is ${this.username} and user's age is ${this.age}`)
+}
+
+let myobj = {
+username : 'sai',
+haslogin : true,
+age : 22
+}
+
+console.log(myobj.username)
+myobj.printme()
+
+function arise(name,car,salary,age){
+    this.name = name;
+    this.car = car;
+    this.salary = salary;
+    this.age = age;
+
+this.readme = function(){
+        console.log(`the user age is ${this.age} and the salary is ${this.salary}`)
+    }
+}
+
+let a1 = new arise('surj','maruti900',28900,22) 
+a1.readme()
+
+ function liabrary(book,catergory){
+    this.book = book;
+    this.catergory = catergory;
+}
+
+liabrary.prototype.read = function(){
+    console.log(`the book name is ${this.book} and the catergory is ${this.catergory}`)}
+
+let book1 = new liabrary('java','programming')
+book1.read()    
