@@ -73,3 +73,73 @@ congratsstudent.apply(student2, ['rakesh']);
 
 let myresult = congratsstudent.bind(student1, 'sai');
 myresult();
+
+
+//some examples by gpt5
+
+function intro(city, country) {
+    console.log(`My name is ${this.name} from ${city}, ${country}`);
+}
+
+const aadmi = { name: "Ravi" };
+
+// Using call
+intro.call(aadmi, "Mumbai", "India"); // My name is Ravi from Mumbai, India
+
+// Using apply (pass args in array)
+intro.apply(aadmi, ["Delhi", "India"]); // My name is Ravi from Delhi, India
+
+
+
+
+
+
+
+const user = {
+    name: "Surj",
+    sayHi: function() {
+        console.log("Hi, I'm " + this.name);
+    }
+};
+
+//setTimeout(user.sayHi, 1000); // ❌ undefined — loses `this`
+setTimeout(user.sayHi.bind(user), 1000); // ✅ Hi, I'm Surj
+
+
+
+
+
+
+
+const person1 = {
+    name: "Alice",
+    greet: function(city) {
+        console.log(`Hi, I'm ${this.name} from ${city}`);
+    }
+};
+
+const person2 = {
+    name: "Bob"
+};
+
+// Reuse greet from person1, but make it run as if it's person2
+person1.greet.call(person2, "Delhi");  // Hi, I'm Bob from Delhi
+
+
+
+
+
+
+
+const obj = {
+    name: "Dino",
+    speak() {
+        console.log("I'm " + this.name);
+    }
+};
+
+//const talk = obj.speak;  // Just storing function reference
+//talk(); // ❌ undefined — 'this' is lost
+
+const talk = obj.speak.bind(obj);
+talk(); // I'm Dino
