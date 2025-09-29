@@ -10,11 +10,13 @@
 //     set setme(value){
 //         this._brand = value;
 //     }
-// }
+//  }
 
 
 
 // let mycar = new car('ford', 'mustang', 2023);
+// mycar._brand = 'new'
+// console.
 
 // mycar.readme = 'BMW' //setter
 
@@ -22,14 +24,14 @@
 
 class Car {
     constructor(brand, model, year) {
-        this._brand = brand; // real storage
-        this._model = model;
-        this._year = year;
+        this.brand = brand; // real storage
+        this.model = model;
+        this.year = year;
     }
 
     // Getter for model (to read it)
     get model() {
-        return this._model;
+        return this._model.toUpperCase();
     }
 
     // Setter for model (to change it)
@@ -39,7 +41,7 @@ class Car {
 
     // Extra: Get full info about the car
     get info() {
-        return `${this._brand} ${this._model} ${this._year}`;
+        return `${this.brand} ${this._model} ${this.year}`;
     }
 }
 
@@ -50,9 +52,10 @@ let myCar = new Car('Ford', 'Mustang', 2023);
 // console.log(myCar.model); // 👉 Mustang
 
 // Change the model using setter
-myCar.model = 'Explorer';
+// myCar.model = 'Explorer';
 
 // Read the full car info
 // console.log(myCar.info); // 👉 Ford Explorer 2023
 
-console.log(myCar)
+console.log(myCar)   
+console.log(myCar.model)   
