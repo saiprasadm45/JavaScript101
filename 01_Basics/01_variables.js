@@ -79,13 +79,13 @@
 // {
 //     let range = 5;
 //     console.log(range)
-//     // console.log(color);
+//     // console.log(color); //cannot hoisted but if below let variable name is diff, then it print from globl scope
 //     let color = "red";
 //     console.log(color);
 
     
 // }
-    // console.log(range)
+//     console.log(range)
 // range = 26;
 // console.log(range);
 
@@ -93,7 +93,7 @@
 
 // var price = 11;
 // function dummy(){
-//     console.log(range);
+//     console.log(`range inside fun is ${range}`);
 //     let people = "sai"
 //     console.log(people);
 //     let student = 3;
@@ -101,10 +101,9 @@
 //     var price = 1200
 //     console.log(price)
 // }
-// let ans = new dummy();
-// console.log(ans)
-//     // console.log(people);
-//     // console.log(student);
+// dummy()
+//     console.log(people);
+//     console.log(student);
 //     console.log(price)
 
 // console.log(price)    //->   undefined
@@ -116,21 +115,21 @@
 // console.log(lock); //undefined
 
 // function myfu(){
-//     console.log(price);   ->   undefined
+//     console.log(price);   //->   undefined
 //     var price = "raj"
-//     console.log(price);   ->   raj
+//     console.log(price);   //->   raj
 // }
 // myfu();
-// console.log(price)     ->   25
+// console.log(price)     //->   name
 
 // {
-//     console.log(price);    // 25
+//     console.log(price);    // name
 //     var price = "raj"
 //     console.log(price);     //raj
 // }
 // console.log(price)      // raj
 
-// console.log(isDrink);   //Cannot access 'isDrink' before initialization
+//console.log(isDrink);   //Cannot access 'isDrink' before initialization
 /*
 let isDrink = true;
 console.log(isDrink);  //true

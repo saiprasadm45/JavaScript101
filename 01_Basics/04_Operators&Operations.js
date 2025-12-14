@@ -14,7 +14,7 @@ console.log(firstNum ** secondNum)
 console.log("5" * "2")  // only plus can perfom concat string; else remaining operations convert string to numb and perform task..
 let value = 55;
 let negvalue = -value;
-// console.log(negvalue)
+console.log(negvalue)
 
 let Firstname = "john"
 let Lastname = "geo"
@@ -87,16 +87,16 @@ console.log(status)
 //assignment operator
 
 let one = 5;
-let two = one;
+let two = one; //value by copy
 two = 4;
 console.log(one)
 console.log(two);
 
 let d = 10;
-console.log(d+=25);
-console.log(d-=25);
-console.log(d*=25);
-console.log(d/=25);
+console.log(d+=25);//35
+console.log(d-=25);//10 because d was 35 now 35-25=10
+console.log(d*=25);//250 because d was 10 now 10*25=250
+console.log(d/=25);//10 because d was 250 now 250/25=10
 
 
 //logical operators

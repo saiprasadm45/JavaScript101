@@ -1,6 +1,14 @@
 /* conversion */
 
+{
 //any comparision with NaN is always false
+//null == undefined -> true (only in loosly typed)
+//null === undefined -> false
+//relational operators (>=, <, etc) try to convert values to numbers
+//in numeric comparision null become 0 and undefined become NaN
+//avoid ==, use ===
+}
+
 
 
 let isMarried = "sundar";
@@ -34,6 +42,7 @@ console.log(null > 0)   //false (0 > 0)
 console.log(null >= 0)  //true (0 >= 0)
 // comparision operators and equality check operators work diffrently, comparisionns convert null to a number, treating as 0, thats why 
 
+//any numeric comparision with undefined is false.[undefined -> Number -> NaN; and Nan comparision always false]
 console.log(undefined == 0) //false
 console.log(undefined > 0)  //false
 console.log(undefined >= 0) //false
@@ -44,8 +53,8 @@ console.log(true > 0)//true 1=true
 console.log(true >= 0)//true
 console.log(false > 0)//false
 console.log(true <= 0)//false
-console.log(true >= "sarj") //false
+console.log(true >= "sarj") //false // 'sarj' converted into Numbers (NaN) and NaN is always false
 console.log(true >= 12)//false
 console.log(false >= '')//true
-console.log("true" == true) //false
+console.log("true" == true) //false;   "true" -> NaN ; NaN == 1; and we know any comparision with NaN is always false.
 

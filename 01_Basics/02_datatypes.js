@@ -17,6 +17,7 @@
           type of Nan is number,
             type of object is object.
                type of null is object.
+                  type of undefined is undefined.
      
 
 */
