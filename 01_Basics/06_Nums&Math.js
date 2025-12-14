@@ -26,9 +26,9 @@ console.log(Math.sqrt(81)); //square-root foind
 console.log(Math.cbrt(27)) //cube-root found0
 console.log(Math.max(7444, 74154, 15156, 54547984, 44454154, 14578, 454154, 5712, 4245)); //used to find maximum value.
 console.log(Math.min(7444, 74154, 15156, 54547984, 44454154, 14578, 454154, 5712, 4245)); //used to find minimum value
-console.log(Math.pow(2,3)) //find power
-
-console.log(Math.floor(Math.random()*9)+1)
+console.log(Math.pow(2,3)) //find power //2^3=8 , 2*2*2=8
+console.log(Math.random()) //gives random number between 0 to 1 but never 1.
+console.log(Math.floor(Math.random()*10)+1) //gives random number between 1 to 10
 
 
 // famous formula if you want random number between range-> Math.floor(Math.random()*(Max-min+1) + min)
