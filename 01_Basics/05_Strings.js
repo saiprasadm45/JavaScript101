@@ -7,6 +7,7 @@ const experiment = "ILoveMyIndia"
 const myName = "    Bharat is great countries"
 
 console.log(experiment.charAt(4)) //returns char at each index starting from 0
+console.log(experiment.concat(" and USA")) //concat used to concate two string
 console.log("Rajasthan".concat(myName)) //concat used to concate two string
 console.log(myName.indexOf("a")) //gives index of letter; if the character not found return -1.
 console.log(experiment.endsWith("c")) // check the string ends with given character not return boolean
@@ -15,7 +16,7 @@ console.log(experiment.endsWith("c")) // check the string ends with given charac
 
 console.log(experiment.includes("L")) // works with one or more word, check does it include that words or not return boolean.
 console.log(experiment.lastIndexOf("i")) //if a string contains same words multiple time, it will show you the last on.
-console.log(myName.length) //returns length of whole word, starting from 0
+console.log(myName.length) //returns length of whole word, starting from 0; count starts from 1.
 console.log(experiment.replace("I","c"))// it will replace the first words/chars, takes two string by seperating comma, if string not found won't .
 
 const state = 'Gujrat is always remains Gujrat'
@@ -55,5 +56,5 @@ console.log(city.slice(4,-2)) // start from 4 and go till 8.
 const gameName = new String("hitesh-hc")
 console.log(gameName.substring(0,4)) //substring is similar to slice it dont take negative value, it will flip value if firstvalue > secondvalue
 console.log(gameName.substring(-3)) //negative value become 0
-
+//but we often use slice then substring
 console.log(gameName.substring(6,2)) // flip values because start > end; 
