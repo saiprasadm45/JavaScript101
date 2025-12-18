@@ -9,7 +9,7 @@
 
 
 const myArray = [7,94,49,3598,17]
-console.log(myArray[0]) 
+console.log(myArray[0])
 console.log(typeof myArray) //object
 console.log(myArray.push("node"))
 console.log(myArray.length)
@@ -19,12 +19,12 @@ console.log(myArray)
 console.log(myArray[6]="added") //added cause existing arry had only 5 elements starting from 0, added "added" at 6 position
 console.log(myArray.length) // array length strts from 1
 
-// for(const item of myArray){
-//     console.log(item)
-// }
-// myArray.forEach((value, index) => {
-//   console.log(index, value);
-// });
+for(const item of myArray){
+    console.log(`using for of ${item}`)
+}
+myArray.forEach((value, index) => {
+  console.log(index, value);
+});
 
 const arr = [7,5,689,14,78,7]
 arr.pop() // remove last element
@@ -41,6 +41,7 @@ let newarr = arr.join(","); // returns string of an array; // not any changes in
 console.log(newarr, typeof newarr)
 
 const arrb = Array(7) //creates empty array size of 7 but can later increase.
+console.log(`the arrb length is: ${arrb.length}`);
 arrb[0] = 0
 arrb[1] = 1
 arrb[2] = 2
@@ -52,7 +53,7 @@ arrb[8] = 8
 arrb[6] = 6
 arrb[9] = 9
 
-// console.log(arrb)
+console.log(arrb)
  
 const arrc = Array.of(7,7,5) //another way t0 create array
 console.log(`the arrc is: ${arrc.length}`);
@@ -73,11 +74,11 @@ console.log("before slice operation- ", myArray) //A [ 7, 'nayn', 49, 3598, 17, 
 const temparr = myArray.slice(0,3) // 7,'nayn',49 // includes 0,1,2 not 3(exclusive)
 const temparr1 = myArray.slice(-4) // 3598, 17.....
 const temparr2 = myArray.slice(-6,-1) // 'nayn' .....,node
-const temparr3 = myArray.slice(-2,-6) // 'node'
+const temparr3 = myArray.slice(-2,-6) // 'empty'
 const temparr4 = myArray.slice(4) // 17.....
 const temparr5 = myArray.slice(2,6) // 49..... node
 const temparr6 = myArray.slice(2, -3) //49 3598
-const temparr7 = myArray.slice(5,1) // //node
+const temparr7 = myArray.slice(5,1) // //empty
 // slice wont work if start > end, return nothinng, blank
 
 console.log(myArray.slice(1, 6).reverse()) //it will reverse. → ['nayn', 49, 3598, 17, 'node']
