@@ -85,11 +85,17 @@ let arr1 = Object.entries(user)
 console.log(arr1)
 
 //array destructuring.
+//for renaming the property in variable use colon 
+// let{name:nav, umar, price} = myobj;
 
-let num = [13,35,35,2]
-let [a,b,,d] = num;
+
+
+
+let num = [13,35,347,2]
+let [a,b,,d] = num;//skipped the third one i.e 347
 console.log(a,b,d)
 
+//for default one to add
 let [p,q,r, ,g = 22] = num//default value
 console.log(p,q,r,g);
 
