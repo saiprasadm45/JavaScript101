@@ -21,7 +21,7 @@ let user = {
         console.log("hello user, welcome back")
     }
 }
-
+console.log(user)
 /* 
     way to access object
 console.log(user.name)
