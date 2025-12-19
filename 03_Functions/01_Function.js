@@ -112,7 +112,7 @@ const calculator = (function () {
 })();
 
 console.log(calculator.add(19));
-console.log(calculator.substract(7));
+console.log(calculator.substract(11));
 console.log(calculator.getresult());
 
 
