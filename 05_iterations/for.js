@@ -8,14 +8,14 @@ for(let i = 1; i<=10; i++){
 for(let i = 0; i<=10; i++){
     console.log(i)
     if(i==3){
-        break; //breaks the flow
+        break; //breaks the flow completely
     }
 }
 
 
 for(let i = 1; i<=20; i++){
      if(i % 2 ==0){
-        continue; //breaks the flow
+        continue; //skip the iteration which meets the condition
     }
     console.log(i)
    
