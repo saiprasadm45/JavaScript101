@@ -31,19 +31,19 @@
 // max.greet();
 // max.hate();// wont work cause arrow function dont bind their own this value, they inherit this value from the enclosing lexical context at the time they are created.
 
-const peoples = {
-  name: "ayush",
-  age: 17,
-  greet() { //colon not required in method shorthand
-    console.log("ye bhi lelo");
-    return `ye lo bhaisab ${this.name}`; //this refers to peoples object
-  },
-};
+// const peoples = {
+//   name: "ayush",
+//   age: 17,
+//   greet() { //colon not required in method shorthand
+//     console.log("ye bhi lelo");
+//     return `ye lo bhaisab ${this.name}`; //this refers to peoples object
+//   },
+// };
 
 // console.log(peoples.greet())
-// const aalu = peoples.greet()
-// const aalu = peoples.greet;
-// aalu();
+// const aalu = peoples.greet()// here this will refer to peoples object
+// const aalu = peoples.greet;// wont work cause here this will be undefined as its not called as a method of peoples object
+// aalu(); //in this case this will be undefined
 
 // const aalu2 = peoples.greet();
 // // const aalu3 = aalu2()
@@ -69,53 +69,56 @@ const peoples = {
 //   this.name = name;
 //   this.age = age;
 
-//   function verification() {
-//     if (age >= 18) {
-//       return `hello ${name}, congratulations you can vote!`;
-//     } else if (age >= 58) {
-//       return `hello ${name} sir, just stay at your home our officers come at your door`;
+//   this.verification =function() {
+//     if (this.age >= 58) {
+//       return `hello ${this.name} sir, just stay at your home our officers come at your door`;
+//     } else if (this.age >= 18) {
+//       return `hello ${this.name}, congratulations you can vote!`;
 //     }else{
-//         return `sorry, ${name} you are ${age} year old, so you can vote after ${18 - age} years.`
+//         return `sorry, ${this.name} you are ${this.age} year old, so you can vote after ${18 - this.age} years.`
 //     }
 //   }
 
-//   let app0 = verification();
-//   console.log(app0)
+//   // let app0 = verification();
+//   // console.log(app0)
   
 // }
+// // console.log(checkvoters(2244, 7));
+// let person1 = new checkvoters('rajesh', 79)
+// console.log(person1)
 
-// let person1 = new checkvoters('rajesh', 13)
+// console.log(person1.verification())
 // let person2 = new checkvoters('rahul', 24)
 // let person3 = new checkvoters('jyotsing', 63)
 // console.log(person1.app0)
 
 
-class checkvoters {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
+// class checkvoters {
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
 
-        let storereturn = () => {
-            if (age >= 58) {
-                return `hello ${this.name},sir, just stay at your home our officers come at your door. `;
-            } else if (age >= 18) {
-                return `hello ${this.name} sir, congratulations you can vote!`;
-            } else {
-                return `sorry, ${this.name} you are ${this.age} year old, so you can vote after ${18 - this.age} years.`;
-            }
-        }
+//          this.storereturn = () => {
+//             if (age >= 58) {
+//                 return `hello ${this.name},sir, just stay at your home our officers come at your door. `;
+//             } else if (age >= 18) {
+//                 return `hello ${this.name} sir, congratulations you can vote!`;
+//             } else {
+//                 return `sorry, ${this.name} you are ${this.age} year old, so you can vote after ${18 - this.age} years.`;
+//             }
+//         }
 
-        this.result = storereturn;
-        // this.result = result;
+//         // this.result = storereturn;
+//         // this.result = result;
 
 
-    }
+//     }
     
     
-}
+// }
 
-let person1 = new checkvoters('rajesh', 13)
-console.log(person1.result())
+// let person1 = new checkvoters('rajesh', 13)
+// console.log(person1.storereturn())
 // let person2 = new checkvoters('rahul', 24)
 // let person3 = new checkvoters('jyotsing', 63)
 // console.log(checkvoters)
