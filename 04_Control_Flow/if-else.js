@@ -22,7 +22,7 @@ if(IsSalaryCredited){
 if(24>12) console.log("hello") //one line only
 
 let userdebitcard = true;
-let balance = false;
+let balance = true;
 let loggedwithgoogle = false;
 let loggedwithemail = true;
 
@@ -31,6 +31,4 @@ if(loggedwithemail || loggedwithgoogle){
      if(userdebitcard && balance){
     console.log("you are ready to buy course")
      }
-
-
 }
