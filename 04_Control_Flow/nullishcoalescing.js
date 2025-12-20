@@ -7,6 +7,9 @@ function clgdata(name){
     console.log(`hello ${name}`)
  }
 
- console.log(clgdata("raj"))
+ console.log(clgdata('ravi'))
 
 console.log(null ?? undefined ?? "suresh" ?? "raj") // here anything that is not null/undefinned, get print , her suresh is direct first after the nullish over.
+let user;// here undefined
+
+console.log(user ?? 'Anonymous')
