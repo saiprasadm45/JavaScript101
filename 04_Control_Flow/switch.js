@@ -59,3 +59,29 @@ switch(directions){
         console.log("delhi")
         break;
 }
+
+let rollno = 3;
+
+switch (rollno) {
+    case 1:
+        console.log(`hello aniket`)
+        break;
+    case 2:
+        console.log('hello akash')
+        break;
+    case 3:
+        console.log('hello sai')
+        break;
+    case 4:
+        console.log('hello raj')
+        break;
+    case 5:
+        console.log('hello ganu')
+        break;
+    case 6:
+        console.log('hello prthm')
+        break;
+    default:
+        console.log('please enter valid roll no')
+        break;
+}
