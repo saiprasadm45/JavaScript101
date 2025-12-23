@@ -35,7 +35,7 @@ let greetings = "hello world";
 
 for (const greet of greetings) {
   if (greet == " ") {
-    // continue
+    continue
   }
   console.log(`each char is: ${greet}`);
 }
