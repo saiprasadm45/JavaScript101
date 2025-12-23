@@ -1,20 +1,22 @@
 const parent = document.querySelector(".parent")
 // console.log(parent)
-// console.log(parent.children)
+console.log(parent.children)
 
 const child = parent.children
 
 for(let i = 0; i < child.length; i++){
-    // console.log(child[i].innerHTML)
+    console.log(child[i].innerHTML)
 }
 child[2].innerHTML = "sunday"
 
-parent.children[2].style.color = 'red'
-// console.log(parent.firstElementChild)
+parent.children[2].style.color = 'pink'
+// console.log(parent.lastElementChild.innerText)
 // console.log(parent.lastElementChild.innerText)
 let day1 = document.querySelector('.day')
-day1.nextElementSibling.style.color = 'green'
-day1.nextElementSibling.style.fontWeight = '800'
+console.log(day1.textContent)
+console.log(day1.nextElementSibling.innerHTML)
+// day1.nextElementSibling.style.color = 'green'
+// day1.nextElementSibling.style.fontWeight = '800'
 
 
 let mymonday = document.querySelector(".day")
