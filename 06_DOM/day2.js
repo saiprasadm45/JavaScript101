@@ -29,7 +29,7 @@ mymonday.classList.add("okey")
 
 
 let hone = document.createElement("h1")
-console.log(hone);
+// console.log(hone);
 
 hone.innerHTML = 'my heading'
 hone.className = 'hone'
@@ -40,12 +40,14 @@ hone.style.textTransform = 'uppercase'
 hone.style.letterSpacing = '0.7px'
 hone.setAttribute("title","generateAI")
 let parent2 = document.querySelector('.parent2')
-parent2.appendChild(hone)
+// parent2.appendChild(hone)
+parent2.insertBefore(hone, parent2.firstElementChild)
 
-// let aday = document.createElement('div')
-// aday.setAttribute('class','day')
-// aday.innerHTML = 'Friday'
-// parent.appendChild(aday)
+let aday = document.createElement('div')
+aday.setAttribute('class','day')
+aday.innerHTML = 'Friday'
+let bday = document.getElementById('bornday')
+bday.after(aday)
 
 
 // let addimg = document.createElement('img')
@@ -55,50 +57,54 @@ parent2.appendChild(hone)
 // parent2.appendChild(addimg)
 // console.log(parent2.childNodes)
 
-// let lorem = document.createElement('p')
-// lorem.setAttribute('class','mypara')
-// lorem.innerHTML = 'lorem epsum and arisement'
-// lorem.style.color = 'red'
+let lorem = document.createElement('p')
+lorem.setAttribute('class','mypara')
+lorem.innerHTML = 'lorem epsum and arisement'
+lorem.style.color = 'blue'
+parent.insertBefore(lorem, parent.firstElementChild)
 
-// parent.insertBefore(lorem, parent.firstElementChild)
+let saturday = document.createElement('div')
+saturday.setAttribute('class', 'day')
+saturday.innerText = 'saturday'
+parent.appendChild(saturday)
 // // parent2.appendChild(lorem)
 
 
-// const mewo = document.createElement('h1')
-// mewo.innerText = 'hello from h1'
-// mewo.style.fontSize = '2rem'
-// mewo.style.color = 'violet'
-// mewo.style.border = '3px solid red'
-// mewo.setAttribute('id','myhead')
-// console.log(mewo.innerHTML)
-// document.body.insertBefore(mewo, parent2)
+const mewo = document.createElement('h1')
+mewo.innerText = 'hello from h1'
+mewo.style.fontSize = '2rem'
+mewo.style.color = 'violet'
+mewo.style.border = '3px solid red'
+mewo.setAttribute('id','myhead')
+console.log(mewo.innerHTML)
+document.body.insertBefore(mewo, parent2)
 // console.log(document.body.firstChild)
 // // parent2.after()
 
-// const removing = document.getElementById('myhead')
+const hello = document.getElementById('myhead')
 // removing.after(lorem)
-// // lorem.remove()
+// lorem.remove()
 
-// const learntoremove = parent2.children[2]
+// const learntoremove = parent2.children[0]
 // learntoremove.remove()
 
-// const newp = document.createElement('p')
-// newp.innerHTML = 'im new para'
-// // document.body.appendChild(newp)
-// document.body.replaceChild(newp, removing)
+const newp = document.createElement('p')
+newp.innerHTML = 'sunday'
+document.body.appendChild(newp)
+parent.replaceChild(newp, lorem)
 
 // const bday = document.getElementById('bornday')
 // const newelment = document.createElement('h3')
 // newelment.innerHTML = 'im new h3 bhidu'
-// // parent.appendChild(newelment)
+// parent.appendChild(newelment)
 // parent.replaceChild(newelment, bday)
 
 // const boldhai = document.createElement('h1')
 // boldhai.innerHTML = 'im bold'
 // boldhai.style.fontSize = '50px'
-// // document.body.insertBefore(boldhai, document.body.firstElementChild)
-// // parent.insertBefore(boldhai, parent.children[3])
-// // document.body.appendChild(boldhai)
+// document.body.insertBefore(boldhai, document.body.firstElementChild)
+// parent.insertBefore(boldhai, parent.children[3])
+// document.body.appendChild(boldhai)
 // parent.after(boldhai)
 
 // const wed = document.createElement('div')
