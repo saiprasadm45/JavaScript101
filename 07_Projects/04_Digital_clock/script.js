@@ -5,6 +5,6 @@ const time = document.querySelector('.time')
 
 setInterval(()=>{
 let date = new Date()
-mydate.innerHTML = date.toLocaleDateString();    
+mydate.innerHTML = date.toLocaleDateString('en-GB');    
 time.innerHTML = date.toLocaleTimeString();
 },1000)
