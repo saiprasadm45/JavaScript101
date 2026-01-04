@@ -1,63 +1,131 @@
-let form = document.querySelector("form");
+// let form = document.querySelector("form");
 
-form.addEventListener("submit", (e) => {
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   let userName = document.querySelector("#name").value.trim();
+//   let height = parseInt(document.querySelector("#height").value);
+//   let weight = parseInt(document.querySelector("#weight").value);
+//   let result = document.getElementById("result");
+
+//   result.innerHTML = " ";
+//   //   result.style.color = "red";
+
+//   if (!userName) {
+//     result.innerHTML = "name is required";
+//     return;
+//   } else if (!isNaN(userName)) {
+//     result.innerHTML = "name should be text, not a number";
+//     return;
+//   } else if (!isNaN(userName[0])) {
+//     result.innerHTML = "name should not start with number";
+//     return;
+//   }
+
+//   for (let i = 0; i < userName.length; i++) {
+//     if (!isNaN(userName[i]) && userName[i] !== " ") {
+//       result.innerHTML = "name shouldnt contain number";
+//       return;
+//     }
+//   }
+
+//   if (!height || isNaN(height) || height <= 0 || height > 300) {
+//     result.innerHTML = "please enter a valid height";
+//     return;
+//   } else if (!weight || isNaN(weight) || weight <= 0 || weight > 200) {
+//     result.innerHTML = "please enter a valid weight";
+//     return;
+//   } else {
+//     // let bmi = (weight / ((height * height) / 10000)).toFixed(2);
+//     let bmi = (weight / (height / 100) ** 2).toFixed(1);
+
+//     function category(bodymass) {
+//       if (bodymass <= 18.6) {
+//         return "underweight";
+//       }
+
+//       if (bodymass >= 18.6 && bodymass <= 24.9) {
+//         return "healthy";
+//       }
+//       if (bodymass >= 24.9) {
+//         return "Overweight";
+//       }
+
+//     }
+//       let finalresult = category(bmi);
+//     result.style.backgroundColor = 'greenYellow'
+//     result.style.borderRadius = '15px'
+//     result.style.padding = '2rem'
+//     result.style.fontSize = '2rem'
+//     result.style.margin = '1rem'
+//     result.innerHTML = `<span>Hello ${userName}, your BMI is: ${bmi} and your are : ${finalresult}</span>`;
+//     return;
+//   }
+// });
+
+let form = document.querySelector('form')
+
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  let userName = document.querySelector("#name").value.trim();
-  let height = parseInt(document.querySelector("#height").value);
-  let weight = parseInt(document.querySelector("#weight").value);
-  let result = document.getElementById("result");
 
-  result.innerHTML = " ";
-  //   result.style.color = "red";
+  let username = document.querySelector('#name').value.trim();
+  let height = Number(document.querySelector('#height').value)
+  let weight = Number(document.querySelector('#weight').value)
+  let result = document.querySelector('#result')
 
-  if (!userName) {
-    result.innerHTML = "name is required";
+  result.innerHTML = "";
+
+  const showerror = (msg) =>{
+    result.innerHTML = msg;
+  }
+
+  if (!username) {
+    // result.innerHTML = 'name is required'
+    showerror('name is required')
     return;
-  } else if (!isNaN(userName)) {
-    result.innerHTML = "name should be text, not a number";
+  } else if (!isNaN(username)) {
+    // result.innerHTML = 'name should not be number';
+    showerror('name should not be number')
     return;
-  } else if (!isNaN(userName[0])) {
-    result.innerHTML = "name should not start with number";
+  } else if (!isNaN(username[0])) {
+    // result.innerHTML = 'name shouldnt start with number';
+    showerror('name shouldnt start with number')
     return;
   }
 
-  for (let i = 0; i < userName.length; i++) {
-    if (!isNaN(userName[i]) && userName[i] !== " ") {
-      result.innerHTML = "name shouldnt contain number";
-      return;
+  for (let i = 0; i < username.length; i++) {
+    if (!isNaN(username[i]) && username[i] !== " ") {
+      // result.innerHTML = "name shouldnt contain number";
+      showerror("name shouldnt contain number")
+    return;
     }
   }
 
-  if (!height || isNaN(height) || height <= 0 || height > 300) {
-    result.innerHTML = "please enter a valid height";
+  if(!height || isNaN(height) || height <= 0 || height > 300){
+    // result.innerHTML = 'please enter a valid height';
+    showerror('please enter a valid height')
     return;
-  } else if (!weight || isNaN(weight) || weight <= 0 || weight > 200) {
-    result.innerHTML = "please enter a valid weight";
+  }
+   if(!weight || isNaN(weight) || weight <= 0 || weight > 200){
+    // result.innerHTML = 'please enter a valid height';
+    showerror('please enter a valid weight')
     return;
+  }
+
+  let bmi = Number((weight / (height / 100) ** 2).toFixed(1));
+  //because tofixed() returns string
+
+ function category(bodymass) {
+  if (bodymass < 18.6) {
+    return "Underweight";
+  } else if (bodymass <= 24.9) {
+    return "Healthy";
   } else {
-    // let bmi = (weight / ((height * height) / 10000)).toFixed(2);
-    let bmi = (weight / (height / 100) ** 2).toFixed(1);
-
-    function category(bodymass) {
-      if (bodymass <= 18.6) {
-        return "underweight";
-      }
-
-      if (bodymass >= 18.6 && bmi <= 24.9) {
-        return "healthy";
-      }
-      if (bodymass >= 24.9) {
-        return "Overweight";
-      }
-
-    }
-      let finalresult = category(bmi);
-    result.style.backgroundColor = 'greenYellow'
-    result.style.borderRadius = '15px'
-    result.style.padding = '2rem'
-    result.style.fontSize = '2rem'
-    result.style.margin = '1rem'
-    result.innerHTML = `<span>Hello ${userName}, your BMI is: ${bmi} and your are : ${finalresult}</span>`;
-    return;
+    return "Overweight";
   }
-});
+}
+
+let finalresult = category(bmi)
+
+  result.innerHTML = `hey hello ${username}, your bmi is ${bmi} and you are fall in ${finalresult} category`
+
+})
