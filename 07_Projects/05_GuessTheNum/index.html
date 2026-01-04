@@ -77,6 +77,15 @@
     .resultparas p:first-child{
      margin-top: 0.5rem;
     }
+    #gaveupbtn{
+        display: flex;
+        align-self: self-end;
+        font-weight: 900;
+        font-size: 19px;
+        text-decoration: none;
+        color: #140e69;
+        display: none;
+    }
     @media (max-width:500px) {
         
     }
@@ -89,13 +98,14 @@
         <p>You have 10 attempts to guess the right number</p>
         <form action="#">
             <label for="guessfield" id="guess">Guess The Number</label>
+            <a href="#" id="gaveupbtn">Gave up</a>
             <input type="text" id="guessfield" class="guessfield">
             <input type="submit" id="submt" value="Submit Guess">
         </form>
 
         <div class="resultparas">
             <p><span class="guesses"></span></p>
-            <p>Remaining Guesses: <span class="remain">10</span></p>
+            <p id="remainG">Remaining Guesses: <span class="remain">10</span></p>
         </div>
     </div>
 </body>
