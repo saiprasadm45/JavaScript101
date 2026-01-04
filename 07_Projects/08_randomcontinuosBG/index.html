@@ -6,16 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        transition: background-color 0.2s ease-in;
+    }
+</style>
 
 <body>
     <div class="wrapper">
         <button id="start">Start</button>
         <button id="stop">Stop</button>
+        <button id="clear">Clear</button>
     </div>
     <script>
-        let start = document.querySelector('#start')
-        let rukao = document.querySelector('#stop')
-        let clearkaro;
+        // let start = document.querySelector('#start')
+        // let rukao = document.querySelector('#stop')
+        // let clearkaro;
+        // let generatecolor = () => {
+        //     let HEX = '0123456789ABCDEF';
+        //     let color = '#';
+
+        //     for (let i = 0; i < 6; i++) {
+        //         color += HEX[Math.floor(Math.random() * 16)]
+        //     }
+        //     return color;
+        //     console.log(color)
+        // }
+
+        // start.addEventListener('click', () => {
+        //     function changebg (){
+        //     let bodycolor = document.body.style.backgroundColor = generatecolor();
+        //     }
+        //    if(!clearkaro){
+        //      clearkaro = setInterval(changebg, 1000)
+        //    }
+        // })
+
+        // rukao.addEventListener('click', () => {
+        //     clearInterval(clearkaro)
+        //     clearkaro = null;
+        // })
+
+        let start = document.querySelector('#start');
+        let rukao = document.querySelector('#stop');
+        let flag;
         let generatecolor = () => {
             let HEX = '0123456789ABCDEF';
             let color = '#';
@@ -23,22 +57,45 @@
             for (let i = 0; i < 6; i++) {
                 color += HEX[Math.floor(Math.random() * 16)]
             }
+            console.log(color);
             return color;
-            console.log(color)
+
         }
 
+        function changebg() {
+            document.body.style.backgroundColor = generatecolor()
+        }
+        clear.disabled = true;
+
         start.addEventListener('click', () => {
-            function changebg (){
-            let bodycolor = document.body.style.backgroundColor = generatecolor();
+
+            if (!flag) {
+                flag = setInterval(changebg, 1000)
             }
-           if(!clearkaro){
-             clearkaro = setInterval(changebg, 1000)
-           }
+
+            start.disabled = true;
+            clear.disabled = false;
+            rukao.disabled = false;
+
         })
 
         rukao.addEventListener('click', () => {
-            clearInterval(clearkaro)
-            clearkaro = null;
+            clearInterval(flag);
+            flag = null;
+            rukao.disabled = true;
+            clear.disabled = false;
+            start.disabled = false;
+        })
+
+        clear.addEventListener('click', () => {
+            clearInterval(flag)
+            flag = null;
+            document.body.style.backgroundColor = '#fff'
+
+            start.disabled = false;
+            rukao.disabled = true;
+            clear.disabled = true;
+
         })
     </script>
 </body>
