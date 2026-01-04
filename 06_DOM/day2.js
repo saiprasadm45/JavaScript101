@@ -111,6 +111,23 @@ parent.replaceChild(newp, lorem)
 // wed.innerHTML = 'wednesday'
 // parent.replaceChild(wed, parent.children[2])
 
+function addLanguage(...langname){
+    const ul = document.querySelector('.language')
+    langname.forEach((lang)=>{
+        const li = document.createElement('li')
+        li.innerHTML = lang;
+        li.setAttribute('class', '${lang}');
+        li.style.color = '#1074d8ff'
+        li.style.fontSize = '25px'
+        li.style.fontWeight = 'bolder'
+        li.style.textTransform = 'uppercase'
+        li.style.marginTop = '2px'
+        ul.appendChild(li)
+        
+    })
+}
+
+addLanguage('python','ruby','rust')
 
 // function addLanguage(...langName){
 //     const ul = document.querySelector('.language')
@@ -135,16 +152,16 @@ parent.replaceChild(newp, lorem)
 
 // optimizelangadd('c++')
 
-// let parent3 = document.querySelector('.language')
+let parent3 = document.querySelector('.language')
 
 // const secondLang = parent3.querySelector('li:nth-child(2)')
 // const newlang = document.createElement('li')
 // newlang.innerHTML = 'typescript'
-// // parent3.replaceChild(newlang, secondLang)
+// parent3.replaceChild(newlang, secondLang)
 // secondLang.replaceWith(newlang)
 
 // const firstlang = parent3.querySelector('li:first-child')
-// firstlang.outerHTML = '<li>Rust</li>'
+// firstlang.innerHTML = '<li>Rust</li>'
 
 // const lastLang = parent3.querySelector('li:last-child')
 // lastLang.remove()
