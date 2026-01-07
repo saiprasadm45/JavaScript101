@@ -29,11 +29,22 @@
     </div>
     <script>
 
+        // document.querySelector('.images').addEventListener('click',(e)=>{
+        //     if(e.target.tagName == 'IMG'){
+        //         let removeit = e.target.parentNode
+        //         // removeit.remove() it also works
+        //         removeit.parentNode.removeChild(removeit)
+        //     }
+        //     if(e.target.tagName == 'A'){
+        //         // e.preventDefault()
+        //     }
+        // })
+
         document.querySelector('.images').addEventListener('click',(e)=>{
             if(e.target.tagName == 'IMG'){
-                let removeit = e.target.parentNode
-                // removeit.remove() it also works
-                removeit.parentNode.removeChild(removeit)
+                // console.log(e.target.parentNode)
+                let parent = e.target.parentNode;
+                parent.parentNode.removeChild(parent)
             }
             if(e.target.tagName == 'A'){
                 e.preventDefault()
