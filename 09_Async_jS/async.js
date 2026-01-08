@@ -1,7 +1,8 @@
 // const { log, reject } = require("async");
 // const { reject } = require("async");
 const { log } = require("console");
-let myFile = require("fs/promises");
+// let myFile = require("fs/promises"); //only for asyncawait, no need of cb
+let myFile = require('fs')
 const { resolve } = require("path");
 // const { setTimeout } = require("timers/promises");
 // let myFileforasync = require('fs').promises // need .promises for async function
@@ -200,21 +201,21 @@ const { resolve } = require("path");
 
 
 
-function wait(ms){
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
+// function wait(ms){
+//     return new Promise(resolve => setTimeout(resolve, ms))
+// }
+
+// wait(1000)
+// .then(()=>{console.log(1); return wait(1000);})
+// .then(()=>{console.log(2); return wait(1000);})
+// .then(()=>{console.log(3); return wait(1000);})
+// .then(()=>{console.log(4); return wait(1000);})
+// .then(()=>{console.log(5); return wait(1000);})
 
 
-wait(1000)
-.then(()=>{console.log(1); return wait(1000);})
-.then(()=>{console.log(2); return wait(1000);})
-.then(()=>{console.log(3); return wait(1000);})
-.then(()=>{console.log(4); return wait(1000);})
-.then(()=>{console.log(5); return wait(1000);})
 
 
-
-// let isLightON = false;
+// let isLightON = true;
 // let p = new Promise((resolve, reject)=>{
 //     if(isLightON){
 //         resolve('oh polc agyi wo polc')
@@ -227,10 +228,17 @@ wait(1000)
 
 // console.log(p)
 
+
+
+
 // let mypromise = new Promise((resolve, reject)=>{
 //     myFile.readFile('fileReadSync.txt','utf-8', (err, data)=>{
-//         if(err) reject(err)
-//             else resolve(data)
+//         if(err){
+//             log(`the error is : ${err}`)
+//             reject(err)
+//         }else{
+//             resolve(data)
+//         }
 // })})
 
 // mypromise.then((res)=>{
@@ -238,6 +246,10 @@ wait(1000)
 // }).catch((err)=>{
 //     console.log('the problem is '+ err)
 // })
+
+
+
+
 
 // let trimfile = new Promise((resolve, reject)=>{
 //     myFile.readFile('fileReadSync.txt','utf-8',(err,data)=>{
@@ -257,12 +269,16 @@ wait(1000)
 //     console.log('the problem is '+ err)
 // })
 
+
+
+
+
 // let cleanfile = new Promise((resolve, reject)=>{
 //     myFile.readFile('fileReadSync.txt','utf-8',(err,data)=>{
 //         if(err){
 //             reject(err)
 //         }else{
-//             let info = data.split().
+//             let info = data.split()
 //             resolve(info)
 //             // resolve(data)
 //         }
@@ -275,15 +291,21 @@ wait(1000)
 //     console.log('the problem is '+ err)
 // })
 
+
+
+
 // setTimeout(() => {
-//   console.log("hello");
-//   setTimeout(() => {
-//     console.log("hi");
+//     console.log("hello");
 //     setTimeout(() => {
-//       console.log("hola");
-//     }, 3000);
-//   }, 5000);
+//         console.log("hi");
+//         setTimeout(() => {
+//             console.log("hola");
+//         }, 3000);
+//     }, 5000);
 // }, 1000);
+
+
+
 
 // function repeae(ms) {
 //   return new Promise((resolve, reject) => {
@@ -298,21 +320,23 @@ wait(1000)
 //   })
 //   .then(() => console.log("jola"));
 
-// function waiting(ms){
-//     return new Promise((resolve,reject)=>{
-//         setTimeout(resolve,ms)
-//     })
-// }
 
-// (async function calling(){
-//     try{
-//         await waiting(1000)
-//         console.log("hello")
-//         await waiting(5000)
-//         console.log("hi")
-//         await waiting(3000)
-//         console.log("hola")
-//     }catch(err){
-//         console.log(err)
-//     }
-// })()
+
+function waiting(ms){
+    return new Promise((resolve,reject)=>{
+        setTimeout(resolve,ms)
+    })
+}
+
+(async function calling(){
+    try{
+        await waiting(1000)
+        console.log("hello")
+        await waiting(5000)
+        console.log("hi")
+        await waiting(3000)
+        console.log("hola")
+    }catch(err){
+        console.log(err)
+    }
+})()
