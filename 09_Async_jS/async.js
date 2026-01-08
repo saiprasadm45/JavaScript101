@@ -1,10 +1,12 @@
-const { log, reject } = require("async");
-let myFile = require("fs");
-const { resolve } = require("path");
-const { promiseHooks } = require("v8");
+// const { log, reject } = require("async");
+// const { reject } = require("async");
+const { log } = require("console");
+let myFile = require("fs/promises");
+// const { resolve } = require("path");
+// const { promiseHooks } = require("v8");
+// log('start of the file')
+// myFile.readFile('fileReadSync.txt','utf-8', cb)
 
-// let content = myFile.readFileSync('fileReadSync.txt','utf-8')
-// console.log(content)
 
 // function cb(err,data){
 //     if(data){
@@ -13,24 +15,57 @@ const { promiseHooks } = require("v8");
 //    console.log(`the error is: ${err}`);
 // }}
 
-// myFile.readFile('fileReadSync.txt','utf-8', cb)
+// let content = myFile.readFileSync('fileReadSync.txt','utf-8')
+// console.log(content)
+// log('end of the file')
+
 
 // function promisifyFileread(){
-//     return new Promise((resolve,reject)=>{
-//             myFile.readFile('fileReadSync.txt','utf-8',(err, data)=>{
-//                 if(err){
-//                     reject(err)
-//                 }
-//                 else{
-//                     resolve(data)
-//                 }
-//             })
+//     return new Promise((resolve, reject)=>{
+//         myFile.readFile('fileRadSync.txt', 'utf-8',(err,data)=>{
+//             if(err){
+//                 reject(err)
+//             }else{
+//                 resolve(data)
+//             }
+//         })
 //     })
 // }
 
 // promisifyFileread().then((res)=>{
-//     console.log(`the response is: ${res}`)
-// }).catch((err)=>{console.log(err)})
+//     log(`the response is: ${res}`)
+// }).catch((err)=>log(`err h bhai err: ${err}`))
+
+
+// let mypromise = new Promise((resolve, reject) => {
+//     myFile.readFile('fileReadSync.txt', 'utf-8', (err, data) => {
+//         if(err){
+//             reject(err)
+//         }else{
+//             resolve(data)
+//         }
+//     })
+// })
+
+// mypromise.then((res) => {
+//     log(`the result is: ${res}`)
+// }).catch((err) => {
+//     log(`the err is: ${err}`)
+// })
+
+
+
+async function readkaro(path) {
+    try{
+        const data = await myFile.readFile(path, 'utf-8')
+        console.log(`the data is: ${data}`)
+    }catch(err){
+        console.log(`the err is: ${err}`)
+    }
+}
+
+readkaro("fileReadSync.txt")
+
 
 // async function reading() {
 //     try{
@@ -193,21 +228,21 @@ const { promiseHooks } = require("v8");
 //   })
 //   .then(() => console.log("jola"));
 
-function waiting(ms){
-    return new Promise((resolve,reject)=>{
-        setTimeout(resolve,ms)
-    })
-}
+// function waiting(ms){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(resolve,ms)
+//     })
+// }
 
-(async function calling(){
-    try{
-        await waiting(1000)
-        console.log("hello")
-        await waiting(5000)
-        console.log("hi")
-        await waiting(3000)
-        console.log("hola")
-    }catch(err){
-        console.log(err)
-    }
-})()
+// (async function calling(){
+//     try{
+//         await waiting(1000)
+//         console.log("hello")
+//         await waiting(5000)
+//         console.log("hi")
+//         await waiting(3000)
+//         console.log("hola")
+//     }catch(err){
+//         console.log(err)
+//     }
+// })()
