@@ -2,6 +2,8 @@
 // const { reject } = require("async");
 const { log } = require("console");
 let myFile = require("fs/promises");
+const { resolve } = require("path");
+// const { setTimeout } = require("timers/promises");
 // let myFileforasync = require('fs').promises // need .promises for async function
 
 
@@ -92,9 +94,15 @@ let myFile = require("fs/promises");
 
 
 
+
+
 // setTimeout((a,b) => {
 //     console.log(a+b)
-// },2000, 22, 15);
+// },2000, 22, 15); //here the value after ms is argument to that settimeout fun
+
+
+
+
 
 // function counttill10(){
 //     return new Promise((resolve,reject)=>{
@@ -110,6 +118,70 @@ let myFile = require("fs/promises");
 
 // counttill10().then(main)
 
+
+
+
+
+// function wait(ms){
+//     return new Promise(resolve => setTimeout(resolve, ms))
+// }
+
+// async function counttill10(){
+//     for(let i = 1; i <= 10; i++){
+//         console.log(i)
+//         await wait(1000)
+//     }
+// }
+
+
+// counttill10()
+
+
+
+
+// setTimeout(() => {
+//     console.log(1)
+//     setTimeout(() => {
+//         console.log(2)
+//         setTimeout(() => {
+//             console.log(3)
+//         }, 1000)
+//     }, 1000)
+// }, 1000)
+
+
+
+
+
+// function waiting(ms){
+//    return new Promise((resolve, reject) => {
+//         setTimeout(resolve, ms)
+//     })
+// }
+
+// async function count() {
+//     await waiting(1000);
+//     log(1);
+//     await waiting(1000);
+//     log(2);
+//     await waiting(1000);
+//     log(3);
+//     await waiting(1000);
+//     log(4);
+//     await waiting(1000);
+//     log(5);
+// }
+
+// count()
+
+
+
+
+// let wait = ms => new Promise(resolve => setTimeout(resolve, ms)) //implicit return
+
+
+
+
 // let wait = (ms)=>{
 //     return new Promise((resolve,reject)=>{
 //         setTimeout(resolve,ms)
@@ -123,7 +195,24 @@ let myFile = require("fs/promises");
 //     }
 // }
 
-// // printtilln(10)
+// printtilln(10)
+
+
+
+
+function wait(ms){
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+
+wait(1000)
+.then(()=>{console.log(1); return wait(1000);})
+.then(()=>{console.log(2); return wait(1000);})
+.then(()=>{console.log(3); return wait(1000);})
+.then(()=>{console.log(4); return wait(1000);})
+.then(()=>{console.log(5); return wait(1000);})
+
+
 
 // let isLightON = false;
 // let p = new Promise((resolve, reject)=>{
