@@ -1,9 +1,14 @@
+//awaits with rejected promise throws error and once error throrws its directly goes to catch skipping reminaing lines.
+
 // function returning(arr) {
 //   let filtered = arr.filter((user) => {
 //     return user.age > 18 && user.gender == "male";
 //   });
 //   return filtered;
 // }
+
+const { log } = require("console");
+const { stripTypeScriptTypes } = require("module");
 
 // const users = [
 //   {
@@ -24,9 +29,11 @@
 // ];
 // console.log(returning(users));
 
+
+
 // let fs = require('fs')
 
-// let readmyfile = fs.readFileSync("a.txt",'utf-8')
+// let readmyfile = fs.readFileSync("fileReadSync.txt",'utf-8')
 // console.log(readmyfile)
 
 // console.log("Hello");
@@ -47,6 +54,8 @@
 // }, 3000);
 // console.log("hello5");
 
+
+
 // setTimeout(() => {
 //   console.log(2);
 //   setTimeout(() => {
@@ -64,31 +73,32 @@
 // }, 2000);
 
 // function getData(dataId, getNextData) {
-//   setTimeout(() => {
-//     console.log("data", dataId);
-//     if (getNextData) {
-//       getNextData();
-//     }
-//   }, 2000);
+//     setTimeout(() => {
+//         console.log("data", dataId);
+//         if (getNextData) {
+//             getNextData();
+//         }
+//     }, 2000);
 // }
 
 // getData(
 //     1, () => {
-//   console.log("getting data2 ....");
-//   getData(2, () => {
-//     console.log("getting data4 ....");
-//     getData(4, () => {
-//       console.log("getting data6 ....");
-//       getData(6, () => {
-//         console.log("getting data8 ....");
-//         getData(8, () => {
-//           console.log("getting data10 ....");
-//           getData(10);
+//         console.log("getting data2 ....");
+//         getData(2, () => {
+//             console.log("getting data4 ....");
+//             getData(4, () => {
+//                 console.log("getting data6 ....");
+//                 getData(6, () => {
+//                     console.log("getting data8 ....");
+//                     getData(8, () => {
+//                         console.log("getting data10 ....");
+//                         getData(10);
+//                     });
+//                 });
+//             });
 //         });
-//       });
 //     });
-//   });
-// });
+
 
 // function mynewFun(number){
 //     return new Promise((resolve, reject)=>{
@@ -99,18 +109,18 @@
 //     })
 // }
 
-// mynewFun(2).then(()=> mynewFun(4))
+// mynewFun(2).then(()=> mynewFun(4)).then(()=>mynewFun(6))
 
-function checkevenorodd(number){
-    return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            if(number % 2 == 0){
+function checkevenorodd(number) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (number % 2 == 0) {
                 resolve(`the number is even : ${number}`)
             }
-            else{
+            else {
                 reject(`the number is odd : ${number}`)
             }
-        },3000)
+        }, 3000)
     })
 }
 
@@ -121,28 +131,45 @@ function checkevenorodd(number){
 // .catch((error)=>{
 //     console.log(`inside catch : ${error}`)
 // })
-// .finally((status)=>{
-//     console.log(`inside finally : ${status}`);
+// .finally(()=>{
+//     console.log(`inside finally : Done chekcing number`);
 // })
 
 
-// async function checknum(num) {
+// async function checknum() {
 //   try {
-//     const res1 = await checkevenorodd(num);
+//     const res1 = await checkevenorodd(22);
 //     console.log(res1);
 
-//     const res2 = await checkevenorodd(num);
+//     const res2 = await checkevenorodd(17);
 //     console.log(res2);
 
-//     const res3 = await checkevenorodd(num);
+//     const res3 = await checkevenorodd(47);
 //     console.log(res3);
 //   } catch (error) {
 //     console.log(`❌ the error is: ${error}`);
 //   }
 // }
 
-// checknum(23)
-// checknum(2)
+// checknum()
+
+async function safecheck(num) {
+    try{
+        const res = await checkevenorodd(num);
+        console.log(res);
+    } catch(err){
+        console.log(err)
+    }
+}
+
+async function checknum() {
+    await safecheck(22);
+    await safecheck(17);
+    await safecheck(47)
+}
+
+// checknum()
+
 
 function waitfor3s(resolve){
     setTimeout(resolve,5000)
