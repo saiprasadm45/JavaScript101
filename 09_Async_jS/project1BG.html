@@ -29,24 +29,40 @@
     <script>
         let start = document.querySelector('#start')
         let stop = document.querySelector('#stopit')
-        let text = document.querySelector('h1')
-
         let intervalid;
-        const randomness = (str) => {
-            const myage = Math.floor(Math.random() * 11)
-            console.log(myage + str)
+
+        function genUserId(str) {
+            let myusername = str + Math.floor(Math.random() * 16 + 1)
+            console.log(myusername);
         }
 
-        start.addEventListener('click', () => {
-                if(intervalid) return;
-            intervalid = setInterval(randomness, 1000, 'sai')
+        start.addEventListener('click', (e) => {
+            if (intervalid) return;
+            intervalid = setInterval(genUserId, 500, 'ganu')
         })
+
 
         stop.addEventListener('click', () => {
-
             clearInterval(intervalid)
             intervalid = null
+            console.clear()
         })
+
+        // const randomness = (str) => {
+        //     const myage = Math.floor(Math.random() * 11)
+        //     console.log(myage + str)
+        // }
+
+        // start.addEventListener('click', () => {
+        //     if (intervalid) return;
+        //     intervalid = setInterval(randomness, 1000, 'sai')
+        // })
+
+        // stop.addEventListener('click', () => {
+
+        //     clearInterval(intervalid)
+        //     intervalid = null
+        // })
 
     </script>
 
