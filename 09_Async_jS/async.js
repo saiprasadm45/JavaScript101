@@ -2,12 +2,10 @@
 // const { reject } = require("async");
 const { log } = require("console");
 let myFile = require("fs/promises");
-// const { resolve } = require("path");
-// const { promiseHooks } = require("v8");
-// log('start of the file')
+// let myFileforasync = require('fs').promises // need .promises for async function
+
+
 // myFile.readFile('fileReadSync.txt','utf-8', cb)
-
-
 // function cb(err,data){
 //     if(data){
 //         console.log(`the data is: ${data}`);
@@ -17,7 +15,8 @@ let myFile = require("fs/promises");
 
 // let content = myFile.readFileSync('fileReadSync.txt','utf-8')
 // console.log(content)
-// log('end of the file')
+
+
 
 
 // function promisifyFileread(){
@@ -35,6 +34,8 @@ let myFile = require("fs/promises");
 // promisifyFileread().then((res)=>{
 //     log(`the response is: ${res}`)
 // }).catch((err)=>log(`err h bhai err: ${err}`))
+
+
 
 
 // let mypromise = new Promise((resolve, reject) => {
@@ -55,35 +56,26 @@ let myFile = require("fs/promises");
 
 
 
-async function readkaro(path) {
-    try{
-        const data = await myFile.readFile(path, 'utf-8')
-        console.log(`the data is: ${data}`)
-    }catch(err){
-        console.log(`the err is: ${err}`)
-    }
-}
 
-readkaro("fileReadSync.txt")
-
-
-// async function reading() {
+// async function readkaro(path) {
 //     try{
-//         const data = await myFile.readFile('fileReadSync.txt','utf-8')
+//         const data = await myFile.readFile(path, 'utf-8')
 //         console.log(`the data is: ${data}`)
-//     }
-//     catch(err){
-//         console.log(`the error is : ${err}`)
+//     }catch(err){
+//         console.log(`the err is: ${err}`)
 //     }
 // }
 
-// reading()
+// readkaro("fileReadSync.txt")
 
-// let isUserLoggedIn = false;
+
+
+
+// let isUserLoggedIn = true;
 // let isheWatchingShows = true;
 
 // let promise = new Promise((resolve,reject)=>{
-//     if(isUserLoggedIn){
+//     if(!isUserLoggedIn){
 //         reject('no user is not logged in')
 //     }else if(isheWatchingShows){
 //         reject('currently now show is happening')
@@ -98,18 +90,7 @@ readkaro("fileReadSync.txt")
 //     console.log('the err is : '+ err)
 // })
 
-// let myFileforasync = require('fs').promises // need .promises for async function
 
-// async function readmyFile() {
-//     try{
-//         let data = await myFileforasync.readFile('filereadSync.txt','utf-8')
-//         console.log('the data from async fun '+ data)
-//     }catch(err){
-//         console.log('the error from await is '+ err)
-//     }
-// }
-
-// readmyFile()
 
 // setTimeout((a,b) => {
 //     console.log(a+b)
