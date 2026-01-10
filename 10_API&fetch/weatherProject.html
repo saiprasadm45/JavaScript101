@@ -71,13 +71,13 @@
 
 
         setInterval(fetchData, 1000)
-        setInterval(fetchData, 1000)
+        // setInterval(fetchData, 1000)
 
 
         function calling(info) {
 
             // const isotime = info.current_weather.time;
-            let mydate = new Date().toLocaleString();
+            let mydate = new Date().toLocaleString('en-GB');
             time.innerHTML = `<h2> The current Time is ${mydate} `
             temp.innerHTML = `<p>The temperature is: ${info.current_weather.temperature}°C</p>`;
             wind.innerHTML = `<h2>The wind speed is: ${info.current_weather.windspeed} km/h</h2>`;
