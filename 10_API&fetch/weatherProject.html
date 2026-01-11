@@ -30,14 +30,17 @@
 
 <body>
     <div class="wrapper">
-        <h1>MY APID</h1>
+        <h1>xiomi weather apk</h1>
         <div class="temperature"></div>
         <div class="time"></div>
         <div class="wind"></div>
         <div class="latitude"></div>
     </div>
 
-    <script>
+    <script type="module">
+        // import axios from './node_modules/axios/dist/axios.js'; 
+        import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';     
+        // import axios from 'axios';
         let temp = document.querySelector('.temperature')
         let time = document.querySelector('.time')
         let wind = document.querySelector('.wind')
@@ -92,20 +95,25 @@
 
         async function getdata() {
             try {
-                const response = await fetch(url);
+                // const response = await axios.get(url)
+                const response = await fetch(url)
                 const data = await response.json()
+                console.log(response.status)
                 printdata(data)
             } catch (err) {
                 temp.innerHTML = wind.innerHTML = space.innerHTML = `<p style="color: red;">Error loading data</p>`
             }
         }
-
-        setInterval(getdata, 1000)
-
+        getdata()
+        setInterval(getdata, 60000)
+        setInterval(() => {
+              let mydate = new Date().toLocaleString('en-GB');
+            time.innerHTML = `<h2> The current Time is ${mydate} `
+        }, 1000);
 
         function printdata(info) {
-            let mydate = new Date().toLocaleString('en-GB');
-            time.innerHTML = `<h2> The current Time is ${mydate} `
+            // let mydate = new Date().toLocaleString('en-GB');
+            // time.innerHTML = `<h2> The current Time is ${mydate} `
             wind.innerHTML = `<h3>the windspeed is: ${info.current_weather.windspeed} ${info.current_weather_units.windspeed}</h3>`;
             temp.innerHTML = `<h2>the temperature is: ${info.current_weather.temperature} ${info.current_weather_units.temperature}</h2>`;
             space.innerHTML = `<p>GeoLocation: <b>${info.latitude}</b>, <b>${info.longitude}</b></p>`;
