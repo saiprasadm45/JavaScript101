@@ -57,32 +57,58 @@
 
         // }
         temp.innerHTML = wind.innerHTML = space.innerHTML = "Loading...";
-        async function fetchData() {
-            try {
-                const data = await fetch(url);
-                const Response = await data.json()
-                calling(Response);
-            } catch (err) {
-                console.error("Fetch failed:", err);
-                temp.innerHTML = wind.innerHTML = space.innerHTML = `<p style="color: red;">Error loading data</p>`
-            }
-        }
+        // async function fetchData() {
+        //     try {
+        //         const data = await fetch(url);
+        //         const Response = await data.json()
+        //         calling(Response);
+        //     } catch (err) {
+        //         console.error("Fetch failed:", err);
+        //         temp.innerHTML = wind.innerHTML = space.innerHTML = `<p style="color: red;">Error loading data</p>`
+        //     }
+        // }
         // fetchData()
 
 
-        setInterval(fetchData, 1000)
+        // setInterval(fetchData, 1000)
         // setInterval(fetchData, 1000)
 
 
-        function calling(info) {
+        // function calling(info) {
 
-            // const isotime = info.current_weather.time;
+        //     // const isotime = info.current_weather.time;
+        //     let mydate = new Date().toLocaleString('en-GB');
+        //     time.innerHTML = `<h2> The current Time is ${mydate} `
+        //     temp.innerHTML = `<p>The temperature is: ${info.current_weather.temperature}°C</p>`;
+        //     wind.innerHTML = `<h2>The wind speed is: ${info.current_weather.windspeed} km/h</h2>`;
+        //     space.innerHTML = `<p>GeoLocation: <b>${info.latitude}</b>, <b>${info.longitude}</b></p>`;
+
+        // }
+
+
+
+
+
+
+        async function getdata() {
+            try {
+                const response = await fetch(url);
+                const data = await response.json()
+                printdata(data)
+            } catch (err) {
+                temp.innerHTML = wind.innerHTML = space.innerHTML = `<p style="color: red;">Error loading data</p>`
+            }
+        }
+
+        setInterval(getdata, 1000)
+
+
+        function printdata(info) {
             let mydate = new Date().toLocaleString('en-GB');
             time.innerHTML = `<h2> The current Time is ${mydate} `
-            temp.innerHTML = `<p>The temperature is: ${info.current_weather.temperature}°C</p>`;
-            wind.innerHTML = `<h2>The wind speed is: ${info.current_weather.windspeed} km/h</h2>`;
+            wind.innerHTML = `<h3>the windspeed is: ${info.current_weather.windspeed} ${info.current_weather_units.windspeed}</h3>`;
+            temp.innerHTML = `<h2>the temperature is: ${info.current_weather.temperature} ${info.current_weather_units.temperature}</h2>`;
             space.innerHTML = `<p>GeoLocation: <b>${info.latitude}</b>, <b>${info.longitude}</b></p>`;
-
         }
     </script>
 </body>
