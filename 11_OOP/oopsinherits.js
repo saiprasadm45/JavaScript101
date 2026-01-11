@@ -8,28 +8,28 @@ class animal {
         this.sound = sound;
     }
 
-    whereami(){
+    whereami() {
         console.log('im inside animal i.e parent class')
     }
 }
 
 class info extends animal {
-    constructor(name,sound,type){
-        super(name,sound);
+    constructor(name, sound, type) {
+        super(name, sound);
         this.type = type;
     }
 
-    readme(){
+    readme() {
         console.log(`the ${this.name} is cute animal, it makes sound like ${this.sound}, and he lie in the category of ${this.type}`);
-}
-    whereami(){
+    }
+    whereami() {
         super.whereami() //calling parent class method`
         console.log('im inside info i.e child class')
     }
 }
 
 let dog = new info("dog", "bark", 'domestic');
-dog.whereami();
+dog.readme();
 
 console.log(dog instanceof info) //true
 console.log(dog instanceof animal) //true because info is extending animal
